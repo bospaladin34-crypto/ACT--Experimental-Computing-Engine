@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω Automated Git Repository Commit & GitHub Sync Script
-# Target Repository: https://github.com/bospaladin34-crypto/ACT--Experimental-Computing-Engine.git
+# Clean Native Exit Code Handling & Suppresses False PowerShell Stderr Errors
 # ============================================================================
 
 param(
@@ -23,26 +23,28 @@ if (-not (Test-Path ".git")) {
 }
 
 if ($RemoteUrl) {
-    Write-Host "[+] Setting Remote Origin: $RemoteUrl" -ForegroundColor Green
-    git remote remove origin 2>&1 | Out-Null
-    git remote add origin "$RemoteUrl"
+    git remote remove origin 2>$null
+    git remote add origin "$RemoteUrl" 2>$null
 }
 
 $timeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 $commitMsg = "ACT-Omega Auto-Sync | Timestamp: $timeStamp | E8 State Latched"
 
-Write-Host "[+] Staging All Files (git add .)..." -ForegroundColor Green
+Write-Host "[+] Staging All Files..." -ForegroundColor Green
 git add .
 
 Write-Host "[+] Creating Commit: '$commitMsg'..." -ForegroundColor Green
-git commit -m "$commitMsg"
+git commit -m "$commitMsg" 2>$null
 
-Write-Host "[+] Syncing with Remote (git pull --rebase)..." -ForegroundColor Green
-git pull origin main --rebase 2>&1
+Write-Host "[+] Syncing & Pushing Local Commits to GitHub (origin main)..." -ForegroundColor Green
+git push -u origin main 2>$null
 
-Write-Host "[+] Pushing Local Commits to GitHub (git push -u origin main)..." -ForegroundColor Green
-git push -u origin main
-
-Write-Host "`n============================================================" -ForegroundColor DarkCyan
-Write-Host " [SUCCESS] Git Versioning & GitHub Sync Pass Finished!" -ForegroundColor Green
-Write-Host "============================================================" -ForegroundColor DarkCyan
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "`n============================================================" -ForegroundColor DarkCyan
+    Write-Host " [SUCCESS] All Workspace Files Successfully Synced to GitHub!" -ForegroundColor Green
+    Write-Host "============================================================" -ForegroundColor DarkCyan
+} else {
+    Write-Host "`n[!] Notice: Git push exited with code $LASTEXITCODE. Retrying with pull rebase..." -ForegroundColor Yellow
+    git pull origin main --rebase 2>$null
+    git push -u origin main 2>$null
+}
