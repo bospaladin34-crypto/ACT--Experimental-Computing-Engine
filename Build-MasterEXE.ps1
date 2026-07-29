@@ -1,6 +1,7 @@
 ﻿# ============================================================================
 # ACT-Ω Master Executable Compiler Harness
 # Compiles TopologicalMasterStudio.ps1 -> Standalone TopologicalMasterStudio.exe
+# Forces STA Thread Mode (-sta) for 100% WinForms Stability
 # ============================================================================
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
@@ -20,10 +21,11 @@ using System.Diagnostics;
 
 namespace ACTOmegaStudio {
     class Program {
+        [STAThread]
         static void Main(string[] args) {
             ProcessStartInfo psi = new ProcessStartInfo();
             psi.FileName = "powershell.exe";
-            psi.Arguments = "-ExecutionPolicy Bypass -WindowStyle Hidden -File \".\\TopologicalMasterStudio.ps1\"";
+            psi.Arguments = "-sta -ExecutionPolicy Bypass -WindowStyle Hidden -File \".\\TopologicalMasterStudio.ps1\"";
             psi.UseShellExecute = false;
             Process.Start(psi);
         }

@@ -1,36 +1,45 @@
 ﻿# ============================================================================
 # ACT-Ω Unified Master Topological Studio & Autonomous Control Center
-# Features: Polyglot, Physics, Visualizer, Ingestors, Tuners, Embedded Web Hub
+# STA Thread Safe, Zero-ActiveX, Hardened Multi-Tab Control Center
 # ============================================================================
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 $scriptDir = "C:\sovereign_manifold\santos-sync\topological_system_optimizer"
 if (Test-Path $scriptDir) { Set-Location $scriptDir }
 
-# 1. LAUNCH FLOATING HUD OVERLAY & WEB HUB SERVER IN BACKGROUND
+# Stop active web hub instances to avoid port locks
+try { Stop-Process -Name "topological_web_hub" -Force -ErrorAction SilentlyContinue } catch {}
+
+# 1. LAUNCH BACKGROUND SERVICES (HUD OVERLAY & WEB HUB SERVER)
 if (Test-Path ".\TopologicalHUD.ps1") {
-    Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File .\TopologicalHUD.ps1" -WindowStyle Hidden
+    Start-Process powershell -ArgumentList "-sta -ExecutionPolicy Bypass -File .\TopologicalHUD.ps1" -WindowStyle Hidden
 }
 
 if (Test-Path ".\topological_web_hub.exe") {
     Start-Process -FilePath ".\topological_web_hub.exe" -WindowStyle Hidden
 }
 
+# 2. LAUNCH DEDICATED VISIBLE GIT AUTO-PUSH TERMINAL CONSOLE
+if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
+    Start-Process powershell -ArgumentList "-NoExit -sta -ExecutionPolicy Bypass -File .\Start-TopologicalGitWatcher.ps1"
+}
+
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "ACT-Ω v25.0 Master Topological Control Center (Auto-Initialized)"
+$form.Text = "ACT-Ω v25.0 Master Topological Control Center (Auto-Initialized & Git Synced)"
 $form.Size = New-Object System.Drawing.Size(980, 860)
 $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(20, 24, 32)
 $form.ForeColor = [System.Drawing.Color]::White
 
+# Shared State
 $script:braidGenerators = [System.Collections.Generic.List[int]]::new()
 $script:braidGenerators.Add(1); $script:braidGenerators.Add(2); $script:braidGenerators.Add(-2); $script:braidGenerators.Add(1)
 
+# Header Label
 $lblTitle = New-Object System.Windows.Forms.Label
 $lblTitle.Text = "ACT-Ω Unified Master Topological Studio Engine"
 $lblTitle.Font = New-Object System.Drawing.Font("Segoe UI", 15, [System.Drawing.FontStyle]::Bold)
@@ -40,13 +49,14 @@ $lblTitle.Size = New-Object System.Drawing.Size(920, 30)
 $form.Controls.Add($lblTitle)
 
 $lblSub = New-Object System.Windows.Forms.Label
-$lblSub.Text = "Auto-Initialized Control Hub: Polyglot | Physics | Visualizer | Streams | Tuners | Embedded Web Hub"
+$lblSub.Text = "Auto-Initialized Control Hub: Polyglot | Physics | Visualizer | Streams | Tuners | Web Hub | Dedicated Git Console"
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.5)
 $lblSub.ForeColor = [System.Drawing.Color]::LightGray
 $lblSub.Location = New-Object System.Drawing.Point(20, 45)
 $lblSub.Size = New-Object System.Drawing.Size(920, 25)
 $form.Controls.Add($lblSub)
 
+# Tab Control Setup
 $tabControl = New-Object System.Windows.Forms.TabControl
 $tabControl.Location = New-Object System.Drawing.Point(20, 75)
 $tabControl.Size = New-Object System.Drawing.Size(920, 720)
@@ -186,30 +196,28 @@ $tabTuners.Controls.Add($txtTunerOut)
 
 $tabControl.Controls.Add($tabTuners)
 
-# TAB 6: LIVE EMBEDDED WEB TELEMETRY HUB (INTEGRATED)
+# TAB 6: LIVE EMBEDDED WEB TELEMETRY HUB (STABLE WINFORMS TERMINAL)
 $tabWebHub = New-Object System.Windows.Forms.TabPage
-$tabWebHub.Text = "Live Web Hub (Port 8090)"
-$tabWebHub.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
+$tabWebHub.Text = "Live Web Hub (Port 8090)"; $tabWebHub.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $btnOpenBrowser = New-Object System.Windows.Forms.Button
-$btnOpenBrowser.Text = "Open Web Hub in External Browser (http://localhost:8090)"
-$btnOpenBrowser.Size = New-Object System.Drawing.Size(450, 35)
-$btnOpenBrowser.Location = New-Object System.Drawing.Point(15, 15)
+$btnOpenBrowser.Text = "Launch Spatial 3D Web Engine in External Browser (http://localhost:8090)"
+$btnOpenBrowser.Size = New-Object System.Drawing.Size(550, 38)
+$btnOpenBrowser.Location = New-Object System.Drawing.Point(15, 20)
 $btnOpenBrowser.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204)
 $btnOpenBrowser.ForeColor = [System.Drawing.Color]::White
 $btnOpenBrowser.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabWebHub.Controls.Add($btnOpenBrowser)
 
-$webBrowser = New-Object System.Windows.Forms.WebBrowser
-$webBrowser.Size = New-Object System.Drawing.Size(875, 600)
-$webBrowser.Location = New-Object System.Drawing.Point(15, 60)
-$tabWebHub.Controls.Add($webBrowser)
+$txtWebLog = New-Object System.Windows.Forms.TextBox
+$txtWebLog.Multiline = $true; $txtWebLog.ScrollBars = "Both"; $txtWebLog.Size = New-Object System.Drawing.Size(875, 580); $txtWebLog.Location = New-Object System.Drawing.Point(15, 70)
+$txtWebLog.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtWebLog.ForeColor = [System.Drawing.Color]::Cyan; $txtWebLog.Font = New-Object System.Drawing.Font("Consolas", 10.5)
+$txtWebLog.Text = "[+] Spatial 3D WebGPU Constellation Server Active at http://localhost:8090`r`n[+] Listening on 0.0.0.0:8090 for mobile browsers & VR headsets`r`n[+] Click button above to open interactive 3D canvas!"
+$tabWebHub.Controls.Add($txtWebLog)
 
-$btnOpenBrowser.add_Click({
-    Start-Process "http://localhost:8090"
-})
-
+$btnOpenBrowser.add_Click({ Start-Process "http://localhost:8090" })
 $tabControl.Controls.Add($tabWebHub)
+
 $form.Controls.Add($tabControl)
 
 # ALL-STREAM REDIRECTION CALL HELPERS (*>&1)
@@ -342,10 +350,5 @@ Sync-AllTabsFromBraidState
 if (Test-Path ".\topological_ini_tuner.ps1") {
     $txtTunerOut.Text = & ".\topological_ini_tuner.ps1" *>&1 | Out-String
 }
-
-# Navigate Web Browser Control to Embedded Web Hub
-try {
-    $webBrowser.Navigate("http://localhost:8090")
-} catch {}
 
 [System.Windows.Forms.Application]::Run($form)
