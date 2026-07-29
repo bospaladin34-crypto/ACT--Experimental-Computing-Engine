@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω Unified Master Topological Studio & Autonomous Control Center
-# STA Thread Safe, Zero-ActiveX, Hardened Multi-Tab Control Center
+# STA Thread Safe, Integrated ZKP Verifier & Auto-Initialized Control Hub
 # ============================================================================
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -11,7 +11,6 @@ $OutputEncoding = [System.Text.Encoding]::UTF8
 $scriptDir = "C:\sovereign_manifold\santos-sync\topological_system_optimizer"
 if (Test-Path $scriptDir) { Set-Location $scriptDir }
 
-# Stop active web hub instances to avoid port locks
 try { Stop-Process -Name "topological_web_hub" -Force -ErrorAction SilentlyContinue } catch {}
 
 # 1. LAUNCH BACKGROUND SERVICES (HUD OVERLAY & WEB HUB SERVER)
@@ -29,7 +28,7 @@ if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
 }
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "ACT-Ω v25.0 Master Topological Control Center (Auto-Initialized & Git Synced)"
+$form.Text = "ACT-Ω v25.0 Master Topological Control Center (Auto-Initialized & ZKP Verified)"
 $form.Size = New-Object System.Drawing.Size(980, 860)
 $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(20, 24, 32)
@@ -49,7 +48,7 @@ $lblTitle.Size = New-Object System.Drawing.Size(920, 30)
 $form.Controls.Add($lblTitle)
 
 $lblSub = New-Object System.Windows.Forms.Label
-$lblSub.Text = "Auto-Initialized Control Hub: Polyglot | Physics | Visualizer | Streams | Tuners | Web Hub | Dedicated Git Console"
+$lblSub.Text = "Auto-Initialized Control Hub: Polyglot | Physics | ZKP Verifier | Visualizer | Streams | Tuners | Web Hub"
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.5)
 $lblSub.ForeColor = [System.Drawing.Color]::LightGray
 $lblSub.Location = New-Object System.Drawing.Point(20, 45)
@@ -95,22 +94,26 @@ $tabPolyglot.Controls.Add($txtOutput)
 
 $tabControl.Controls.Add($tabPolyglot)
 
-# TAB 2: TC-UFT PHYSICS COMPUTE CORE
+# TAB 2: TC-UFT PHYSICS COMPUTE CORE & ZKP VERIFIER
 $tabPhysics = New-Object System.Windows.Forms.TabPage
-$tabPhysics.Text = "Physics Compute Core"; $tabPhysics.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
+$tabPhysics.Text = "Physics & ZKP Verifier"; $tabPhysics.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $lblPhysTitle = New-Object System.Windows.Forms.Label
-$lblPhysTitle.Text = "TC-UFT Isomorphic Physics Vertex Evaluator"; $lblPhysTitle.Font = New-Object System.Drawing.Font("Segoe UI", 11, [System.Drawing.FontStyle]::Bold); $lblPhysTitle.ForeColor = [System.Drawing.Color]::Cyan; $lblPhysTitle.Location = New-Object System.Drawing.Point(15, 15); $lblPhysTitle.Size = New-Object System.Drawing.Size(600, 25)
+$lblPhysTitle.Text = "TC-UFT Isomorphic Physics & Zero-Knowledge Proof Evaluator"; $lblPhysTitle.Font = New-Object System.Drawing.Font("Segoe UI", 11, [System.Drawing.FontStyle]::Bold); $lblPhysTitle.ForeColor = [System.Drawing.Color]::Cyan; $lblPhysTitle.Location = New-Object System.Drawing.Point(15, 15); $lblPhysTitle.Size = New-Object System.Drawing.Size(600, 25)
 $tabPhysics.Controls.Add($lblPhysTitle)
 
 $cmbPhysMode = New-Object System.Windows.Forms.ComboBox
-$cmbPhysMode.Location = New-Object System.Drawing.Point(15, 48); $cmbPhysMode.Size = New-Object System.Drawing.Size(350, 28); $cmbPhysMode.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
+$cmbPhysMode.Location = New-Object System.Drawing.Point(15, 48); $cmbPhysMode.Size = New-Object System.Drawing.Size(320, 28); $cmbPhysMode.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
 $cmbPhysMode.Items.Add("Electroweak Charged Current (u_L + W- -> d_L)") | Out-Null; $cmbPhysMode.Items.Add("Yukawa Chirality Flip (e_L + H -> e_R)") | Out-Null; $cmbPhysMode.Items.Add("QED Neutral Vertex (e_L + gamma -> e_L)") | Out-Null; $cmbPhysMode.Items.Add("Generational Tau Decay (3rd Gen -> 1st Gen)") | Out-Null; $cmbPhysMode.SelectedIndex = 0
 $tabPhysics.Controls.Add($cmbPhysMode)
 
 $btnRunPhys = New-Object System.Windows.Forms.Button
-$btnRunPhys.Text = "Calculate Physics & Sheaf Coherence"; $btnRunPhys.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnRunPhys.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunPhys.ForeColor = [System.Drawing.Color]::White; $btnRunPhys.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnRunPhys.Size = New-Object System.Drawing.Size(250, 32); $btnRunPhys.Location = New-Object System.Drawing.Point(380, 46)
+$btnRunPhys.Text = "Calculate Physics"; $btnRunPhys.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnRunPhys.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunPhys.ForeColor = [System.Drawing.Color]::White; $btnRunPhys.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnRunPhys.Size = New-Object System.Drawing.Size(200, 32); $btnRunPhys.Location = New-Object System.Drawing.Point(350, 46)
 $tabPhysics.Controls.Add($btnRunPhys)
+
+$btnRunZKP = New-Object System.Windows.Forms.Button
+$btnRunZKP.Text = "Verify ZKP Braid Proof (O(1))"; $btnRunZKP.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnRunZKP.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunZKP.ForeColor = [System.Drawing.Color]::White; $btnRunZKP.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnRunZKP.Size = New-Object System.Drawing.Size(280, 32); $btnRunZKP.Location = New-Object System.Drawing.Point(560, 46)
+$tabPhysics.Controls.Add($btnRunZKP)
 
 $txtPhysOut = New-Object System.Windows.Forms.TextBox
 $txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(875, 580); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 95)
@@ -196,7 +199,7 @@ $tabTuners.Controls.Add($txtTunerOut)
 
 $tabControl.Controls.Add($tabTuners)
 
-# TAB 6: LIVE EMBEDDED WEB TELEMETRY HUB (STABLE WINFORMS TERMINAL)
+# TAB 6: LIVE EMBEDDED WEB TELEMETRY HUB
 $tabWebHub = New-Object System.Windows.Forms.TabPage
 $tabWebHub.Text = "Live Web Hub (Port 8090)"; $tabWebHub.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
@@ -245,6 +248,14 @@ function Execute-PhysicsCore {
         $result = & $exePath $modeArg *>&1 | Out-String
         $txtPhysOut.Text = $result
     } else { $txtPhysOut.Text = "[!] Missing topological_physics_core.exe." }
+}
+
+function Execute-ZKPVerifier {
+    $exePath = ".\topological_zkp_verifier.exe"
+    if (Test-Path $exePath) {
+        $result = & $exePath *>&1 | Out-String
+        $txtPhysOut.Text = $result
+    } else { $txtPhysOut.Text = "[!] Missing topological_zkp_verifier.exe." }
 }
 
 function Sync-AllTabsFromBraidState {
@@ -343,6 +354,7 @@ $cmbPhysMode.add_SelectedIndexChanged({
 $cmbLang.add_SelectedIndexChanged({ Execute-SemanticCompiler })
 $btnCompile.add_Click({ Execute-SemanticCompiler })
 $btnRunPhys.add_Click({ Execute-PhysicsCore })
+$btnRunZKP.add_Click({ Execute-ZKPVerifier })
 
 # INITIAL LAUNCH AUTO-INITIALIZATION PASS
 Sync-AllTabsFromBraidState
