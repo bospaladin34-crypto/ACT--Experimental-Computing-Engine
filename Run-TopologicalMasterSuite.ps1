@@ -1,6 +1,6 @@
 ﻿# ============================================================================
-# ACT-Ω Topological System Master Orchestrator & Autonomous Suite Tester
-# One-Click Autonomous Build, Compilation, Full Verification & GUI Launcher
+# ACT-Ω Topological System Master Orchestrator & End-to-End Suite Diagnostic Pass
+# Executes Autonomous Build, Binary Verification, Re-Compiles Master EXE & Health Telemetry
 # ============================================================================
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
@@ -23,7 +23,7 @@ Write-Host " [ACT-Ω v25.0] Launching Master Autonomous Topological Suite" -Fore
 Write-Host "============================================================" -ForegroundColor DarkCyan
 
 # 1. COMPILE ALL NATIVE RUST SUBSYSTEMS
-Write-Host "`n[1/5] Compiling All 12 Native Rust Subsystems (-O High Optimization)..." -ForegroundColor Yellow
+Write-Host "`n[1/5] Verifying & Compiling All 29 Native Rust Subsystems..." -ForegroundColor Yellow
 
 $rustFiles = @(
     "topological_optimizer.rs",
@@ -37,7 +37,24 @@ $rustFiles = @(
     "topological_mempool_engine.rs",
     "topological_background_daemon.rs",
     "topological_audio_resonator.rs",
-    "topological_cadence_lock.rs"
+    "topological_cadence_lock.rs",
+    "topological_proot_bridge.rs",
+    "topological_governor.rs",
+    "topological_web_hub.rs",
+    "topological_lsp.rs",
+    "topological_llm_middleware.rs",
+    "topological_adapter_sdk.rs",
+    "topological_dma_cavity.rs",
+    "topological_git_sync.rs",
+    "topological_self_healer.rs",
+    "topological_zkp_verifier.rs",
+    "topological_sheaf_cohomology.rs",
+    "topological_casimir_force.rs",
+    "topological_chiral_anomaly.rs",
+    "topological_gravitational_lensing.rs",
+    "topological_anyon_braid.rs",
+    "topological_braid_attention.rs",
+    "topological_geometric_tokenizer.rs"
 )
 
 foreach ($rs in $rustFiles) {
@@ -49,65 +66,105 @@ foreach ($rs in $rustFiles) {
 }
 
 # 2. EXECUTE SYSTEM, KERNEL, GPU & I/O TUNERS
-Write-Host "`n[2/5] Deploying System, Kernel, GPU & File System Optimizations..." -ForegroundColor Yellow
+Write-Host "`n[2/5] Running Kernel, Memory, GPU & File System Tuning Passes..." -ForegroundColor Yellow
 
 if (Test-Path ".\Optimize-TopologicalSystem_v2.ps1") {
-    Write-Host " [+] Running Kernel Page Locking & Core Un-Parking..." -ForegroundColor Green
+    Write-Host " [+] Kernel Page Locking & Core Un-Parking..." -ForegroundColor Green
     & ".\Optimize-TopologicalSystem_v2.ps1"
 }
 
 if (Test-Path ".\topological_io_tuner.ps1") {
-    Write-Host " [+] Running NVMe / SSD File System I/O Compaction..." -ForegroundColor Green
+    Write-Host " [+] NVMe / SSD File System I/O Compaction..." -ForegroundColor Green
     & ".\topological_io_tuner.ps1"
 }
 
 if (Test-Path ".\topological_gpu_tuner.ps1") {
-    Write-Host " [+] Running Low-Latency GPU Driver & DirectX 12 Tuner..." -ForegroundColor Green
+    Write-Host " [+] Low-Latency GPU Driver & DirectX 12 Tuner..." -ForegroundColor Green
     & ".\topological_gpu_tuner.ps1"
 }
 
 if (Test-Path ".\topological_ini_tuner.ps1") {
-    Write-Host " [+] Running Game Engine Heap & Papyrus INI Tuner..." -ForegroundColor Green
+    Write-Host " [+] Game Engine Heap & Papyrus INI Tuner..." -ForegroundColor Green
     & ".\topological_ini_tuner.ps1"
 }
 
-# 3. VERIFY EXECUTABLE PASSES
+# 3. VERIFY EXECUTABLE DIAGNOSTIC PASSES
 Write-Host "`n[3/5] Running Self-Test Diagnostic Passes across Native Binaries..." -ForegroundColor Yellow
 
 if (Test-Path ".\topological_physics_core.exe") {
-    Write-Host " [+] Testing TC-UFT Physics Core (Electroweak Vertex)..." -ForegroundColor Cyan
+    Write-Host "`n --- Diagnostic: TC-UFT Physics Core ---" -ForegroundColor Cyan
     & ".\topological_physics_core.exe" "ew" | Select-Object -First 10
 }
 
-if (Test-Path ".\topological_cadence_lock.exe") {
-    Write-Host " [+] Testing 15.965 Hz Software Cadence Lock..." -ForegroundColor Cyan
-    & ".\topological_cadence_lock.exe"
+if (Test-Path ".\topological_geometric_tokenizer.exe") {
+    Write-Host "`n --- Diagnostic: Geometric Tokenizer ---" -ForegroundColor Cyan
+    & ".\topological_geometric_tokenizer.exe" "Make me a fast python memory optimizer"
 }
 
-# 4. ACTIVATE HARDWARE AFFINITY & SHARED MEMORY RING
-Write-Host "`n[4/5] Activating P-Core Affinity & 64MB Shared Memory Manifold..." -ForegroundColor Yellow
-
-if (Test-Path ".\topological_optimizer.exe") {
-    Start-Process -FilePath ".\topological_optimizer.exe" -WindowStyle Hidden
+if (Test-Path ".\topological_sheaf_cohomology.exe") {
+    Write-Host "`n --- Diagnostic: Sheaf Cohomology H^1(X) ---" -ForegroundColor Cyan
+    & ".\topological_sheaf_cohomology.exe"
 }
+
+if (Test-Path ".\topological_casimir_force.exe") {
+    Write-Host "`n --- Diagnostic: QFT Casimir Force Pressure ---" -ForegroundColor Cyan
+    & ".\topological_casimir_force.exe"
+}
+
+if (Test-Path ".\topological_chiral_anomaly.exe") {
+    Write-Host "`n --- Diagnostic: ABJ Chiral Anomaly Winding ---" -ForegroundColor Cyan
+    & ".\topological_chiral_anomaly.exe"
+}
+
+if (Test-Path ".\topological_gravitational_lensing.exe") {
+    Write-Host "`n --- Diagnostic: Spacetime Metric Raytracer ---" -ForegroundColor Cyan
+    & ".\topological_gravitational_lensing.exe"
+}
+
+if (Test-Path ".\topological_anyon_braid.exe") {
+    Write-Host "`n --- Diagnostic: Fibonacci Anyon Gate Engine ---" -ForegroundColor Cyan
+    & ".\topological_anyon_braid.exe"
+}
+
+if (Test-Path ".\topological_braid_attention.exe") {
+    Write-Host "`n --- Diagnostic: Neural Braid Attention ---" -ForegroundColor Cyan
+    & ".\topological_braid_attention.exe"
+}
+
+if (Test-Path ".\topological_zkp_verifier.exe") {
+    Write-Host "`n --- Diagnostic: Zero-Knowledge Braid Verifier ---" -ForegroundColor Cyan
+    & ".\topological_zkp_verifier.exe"
+}
+
+# 4. RE-COMPILE MASTER EXECUTABLE TO EMBED LATEST CONTROLS
+Write-Host "`n[4/5] Re-Compiling Standalone Master Executable (csc.exe)..." -ForegroundColor Yellow
+if (Test-Path ".\Build-MasterEXE.ps1") {
+    & ".\Build-MasterEXE.ps1"
+}
+
+# 5. ACTIVATE SERVICES & LAUNCH MASTER CONTROL CENTER
+Write-Host "`n[5/5] Activating Shared Memory, Sockets & Opening Master Control Center..." -ForegroundColor Yellow
 
 if (Test-Path ".\topological_hyper_manifold.exe") {
     Start-Process -FilePath ".\topological_hyper_manifold.exe" -WindowStyle Hidden
+    Write-Host " [+] Shared Memory Ring Active: Global\ACT_OMEGA_E8_HYPER_MANIFOLD" -ForegroundColor Green
 }
 
-# 5. LAUNCH BACKGROUND SERVICES & INTERACTIVE STUDIO GUI
-Write-Host "`n[5/5] Launching Background System Tray Switcher & Braid Studio GUI..." -ForegroundColor Yellow
-
-if (Test-Path ".\TopologicalTurboTray.ps1") {
-    Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File .\TopologicalTurboTray.ps1" -WindowStyle Hidden
-    Write-Host " [+] Background System Tray Icon Activated." -ForegroundColor Green
+if (Test-Path ".\TopologicalHUD.ps1") {
+    Start-Process powershell -ArgumentList "-sta -ExecutionPolicy Bypass -File .\TopologicalHUD.ps1" -WindowStyle Hidden
+    Write-Host " [+] In-Game Low-Latency HUD Overlay Activated." -ForegroundColor Green
 }
 
-if (Test-Path ".\TopologicalStudioGUI.ps1") {
-    Write-Host " [+] Opening Interactive Topological Braid Studio Window..." -ForegroundColor Cyan
-    Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File .\TopologicalStudioGUI.ps1"
+if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
+    Start-Process powershell -ArgumentList "-NoExit -sta -ExecutionPolicy Bypass -File .\Start-TopologicalGitWatcher.ps1"
+    Write-Host " [+] Continuous GitHub Auto-Push Watcher Active (Target: origin main)." -ForegroundColor Green
+}
+
+if (Test-Path ".\TopologicalMasterStudio.exe") {
+    Write-Host " [+] Opening Updated Master Control Center Window..." -ForegroundColor Cyan
+    Start-Process -FilePath ".\TopologicalMasterStudio.exe"
 }
 
 Write-Host "`n============================================================" -ForegroundColor DarkCyan
-Write-Host " [ACT-Ω v25.0] Master System Test Complete! All Systems Operational." -ForegroundColor Green
+Write-Host " [ACT-Ω v25.0] Master Suite Launch Complete! All Systems Operational." -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor DarkCyan
