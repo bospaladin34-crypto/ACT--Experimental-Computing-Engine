@@ -32,6 +32,10 @@ $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(20, 24, 32)
 $form.ForeColor = [System.Drawing.Color]::White
 
+# Shared State
+$script:braidGenerators = [System.Collections.Generic.List[int]]::new()
+$script:braidGenerators.Add(1); $script:braidGenerators.Add(2); $script:braidGenerators.Add(-2); $script:braidGenerators.Add(1)
+
 # Header Label
 $lblTitle = New-Object System.Windows.Forms.Label
 $lblTitle.Text = "ACT-Ω Unified Master Topological Studio Engine"
