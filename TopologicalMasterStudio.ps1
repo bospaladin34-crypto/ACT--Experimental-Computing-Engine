@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω Unified Master Topological Studio & Autonomous Control Center
-# STA Thread Safe, Integrated ZKP Verifier & Auto-Initialized Control Hub
+# STA Thread Safe, Tab 1 Prominent One-Click Copy & Direct File Export Buttons
 # ============================================================================
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -13,7 +13,6 @@ if (Test-Path $scriptDir) { Set-Location $scriptDir }
 
 try { Stop-Process -Name "topological_web_hub" -Force -ErrorAction SilentlyContinue } catch {}
 
-# 1. LAUNCH BACKGROUND SERVICES (HUD OVERLAY & WEB HUB SERVER)
 if (Test-Path ".\TopologicalHUD.ps1") {
     Start-Process powershell -ArgumentList "-sta -ExecutionPolicy Bypass -File .\TopologicalHUD.ps1" -WindowStyle Hidden
 }
@@ -22,21 +21,16 @@ if (Test-Path ".\topological_web_hub.exe") {
     Start-Process -FilePath ".\topological_web_hub.exe" -WindowStyle Hidden
 }
 
-# 2. LAUNCH DEDICATED VISIBLE GIT AUTO-PUSH TERMINAL CONSOLE
 if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
     Start-Process powershell -ArgumentList "-NoExit -sta -ExecutionPolicy Bypass -File .\Start-TopologicalGitWatcher.ps1"
 }
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "ACT-Ω v25.0 Master Topological Control Center (Auto-Initialized & ZKP Verified)"
-$form.Size = New-Object System.Drawing.Size(980, 860)
+$form.Text = "ACT-Ω v25.0 Master Topological Control Center (One-Click Copy & Export Active)"
+$form.Size = New-Object System.Drawing.Size(1000, 900)
 $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(20, 24, 32)
 $form.ForeColor = [System.Drawing.Color]::White
-
-# Shared State
-$script:braidGenerators = [System.Collections.Generic.List[int]]::new()
-$script:braidGenerators.Add(1); $script:braidGenerators.Add(2); $script:braidGenerators.Add(-2); $script:braidGenerators.Add(1)
 
 # Header Label
 $lblTitle = New-Object System.Windows.Forms.Label
@@ -44,79 +38,101 @@ $lblTitle.Text = "ACT-Ω Unified Master Topological Studio Engine"
 $lblTitle.Font = New-Object System.Drawing.Font("Segoe UI", 15, [System.Drawing.FontStyle]::Bold)
 $lblTitle.ForeColor = [System.Drawing.Color]::Cyan
 $lblTitle.Location = New-Object System.Drawing.Point(20, 15)
-$lblTitle.Size = New-Object System.Drawing.Size(920, 30)
+$lblTitle.Size = New-Object System.Drawing.Size(940, 30)
 $form.Controls.Add($lblTitle)
 
 $lblSub = New-Object System.Windows.Forms.Label
-$lblSub.Text = "Auto-Initialized Control Hub: Polyglot | Physics | ZKP Verifier | Visualizer | Streams | Tuners | Web Hub"
+$lblSub.Text = "One-Click Code Export: Copy Directly to Clipboard or Auto-Save Code Files Without Manual Editing"
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.5)
 $lblSub.ForeColor = [System.Drawing.Color]::LightGray
 $lblSub.Location = New-Object System.Drawing.Point(20, 45)
-$lblSub.Size = New-Object System.Drawing.Size(920, 25)
+$lblSub.Size = New-Object System.Drawing.Size(940, 25)
 $form.Controls.Add($lblSub)
 
 # Tab Control Setup
 $tabControl = New-Object System.Windows.Forms.TabControl
 $tabControl.Location = New-Object System.Drawing.Point(20, 75)
-$tabControl.Size = New-Object System.Drawing.Size(920, 720)
+$tabControl.Size = New-Object System.Drawing.Size(940, 760)
 
-# TAB 1: POLYGLOT CODE GENERATOR
+# TAB 1: POLYGLOT CODE GENERATOR & DEDICATED EXPORT ACTION ROW
 $tabPolyglot = New-Object System.Windows.Forms.TabPage
-$tabPolyglot.Text = "Polyglot Compiler"; $tabPolyglot.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
+$tabPolyglot.Text = "Polyglot Compiler & Export"; $tabPolyglot.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $lblPrompt = New-Object System.Windows.Forms.Label
-$lblPrompt.Text = "Raw Human Semantics / Auto-Generated BraidC Stream:"
-$lblPrompt.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $lblPrompt.ForeColor = [System.Drawing.Color]::White; $lblPrompt.Location = New-Object System.Drawing.Point(15, 15); $lblPrompt.Size = New-Object System.Drawing.Size(450, 22)
+$lblPrompt.Text = "Raw Human Semantics / Vague Language Prompt:"
+$lblPrompt.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $lblPrompt.ForeColor = [System.Drawing.Color]::White; $lblPrompt.Location = New-Object System.Drawing.Point(15, 12); $lblPrompt.Size = New-Object System.Drawing.Size(450, 22)
 $tabPolyglot.Controls.Add($lblPrompt)
 
 $txtPrompt = New-Object System.Windows.Forms.TextBox
-$txtPrompt.Multiline = $true; $txtPrompt.ScrollBars = "Vertical"; $txtPrompt.Size = New-Object System.Drawing.Size(875, 80); $txtPrompt.Location = New-Object System.Drawing.Point(15, 40)
+$txtPrompt.Multiline = $true; $txtPrompt.ScrollBars = "Vertical"; $txtPrompt.Size = New-Object System.Drawing.Size(895, 65); $txtPrompt.Location = New-Object System.Drawing.Point(15, 35)
 $txtPrompt.BackColor = [System.Drawing.Color]::FromArgb(10, 12, 16); $txtPrompt.ForeColor = [System.Drawing.Color]::LimeGreen; $txtPrompt.Font = New-Object System.Drawing.Font("Consolas", 10)
+$txtPrompt.Text = "Make me an extremely fast python memory optimizer that runs on physical p cores and connects to shared memory"
 $tabPolyglot.Controls.Add($txtPrompt)
 
+# ROW 1: COMPILATION & TOKENIZER CONTROLS
 $lblLang = New-Object System.Windows.Forms.Label
-$lblLang.Text = "Target Language:"; $lblLang.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $lblLang.ForeColor = [System.Drawing.Color]::White; $lblLang.Location = New-Object System.Drawing.Point(15, 135); $lblLang.Size = New-Object System.Drawing.Size(140, 25)
+$lblLang.Text = "Language:"; $lblLang.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $lblLang.ForeColor = [System.Drawing.Color]::White; $lblLang.Location = New-Object System.Drawing.Point(15, 112); $lblLang.Size = New-Object System.Drawing.Size(80, 25)
 $tabPolyglot.Controls.Add($lblLang)
 
 $cmbLang = New-Object System.Windows.Forms.ComboBox
-$cmbLang.Location = New-Object System.Drawing.Point(160, 132); $cmbLang.Size = New-Object System.Drawing.Size(180, 28); $cmbLang.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$cmbLang.Items.Add("Rust") | Out-Null; $cmbLang.Items.Add("Python") | Out-Null; $cmbLang.Items.Add("C/C++") | Out-Null; $cmbLang.Items.Add("Deno FFI") | Out-Null; $cmbLang.Items.Add("TypeScript") | Out-Null; $cmbLang.SelectedIndex = 0
+$cmbLang.Location = New-Object System.Drawing.Point(95, 109); $cmbLang.Size = New-Object System.Drawing.Size(130, 28); $cmbLang.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
+$cmbLang.Items.Add("Rust") | Out-Null; $cmbLang.Items.Add("Python") | Out-Null; $cmbLang.Items.Add("C/C++") | Out-Null; $cmbLang.Items.Add("Deno FFI") | Out-Null; $cmbLang.Items.Add("TypeScript") | Out-Null; $cmbLang.SelectedIndex = 1
 $tabPolyglot.Controls.Add($cmbLang)
 
 $btnCompile = New-Object System.Windows.Forms.Button
-$btnCompile.Text = "Compile Polyglot Code"; $btnCompile.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnCompile.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnCompile.ForeColor = [System.Drawing.Color]::White; $btnCompile.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCompile.Size = New-Object System.Drawing.Size(220, 32); $btnCompile.Location = New-Object System.Drawing.Point(360, 130)
+$btnCompile.Text = "Compile Polyglot Code"; $btnCompile.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $btnCompile.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnCompile.ForeColor = [System.Drawing.Color]::White; $btnCompile.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCompile.Size = New-Object System.Drawing.Size(220, 32); $btnCompile.Location = New-Object System.Drawing.Point(240, 107)
 $tabPolyglot.Controls.Add($btnCompile)
 
+$btnTokenize = New-Object System.Windows.Forms.Button
+$btnTokenize.Text = "Geometrically Compress Prompt"; $btnTokenize.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $btnTokenize.BackColor = [System.Drawing.Color]::FromArgb(108, 117, 125); $btnTokenize.ForeColor = [System.Drawing.Color]::White; $btnTokenize.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnTokenize.Size = New-Object System.Drawing.Size(260, 32); $btnTokenize.Location = New-Object System.Drawing.Point(470, 107)
+$tabPolyglot.Controls.Add($btnTokenize)
+
+# ROW 2: EXPORT BUTTONS (PROMINENT & BRIGHT)
+$btnCopyCode = New-Object System.Windows.Forms.Button
+$btnCopyCode.Text = "COPY CODE TO CLIPBOARD"; $btnCopyCode.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnCopyCode.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnCopyCode.ForeColor = [System.Drawing.Color]::White; $btnCopyCode.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCopyCode.Size = New-Object System.Drawing.Size(430, 38); $btnCopyCode.Location = New-Object System.Drawing.Point(15, 148)
+$tabPolyglot.Controls.Add($btnCopyCode)
+
+$btnSaveFile = New-Object System.Windows.Forms.Button
+$btnSaveFile.Text = "SAVE CODE DIRECTLY TO FILE"; $btnSaveFile.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnSaveFile.BackColor = [System.Drawing.Color]::FromArgb(255, 193, 7); $btnSaveFile.ForeColor = [System.Drawing.Color]::Black; $btnSaveFile.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnSaveFile.Size = New-Object System.Drawing.Size(430, 38); $btnSaveFile.Location = New-Object System.Drawing.Point(460, 148)
+$tabPolyglot.Controls.Add($btnSaveFile)
+
 $txtOutput = New-Object System.Windows.Forms.TextBox
-$txtOutput.Multiline = $true; $txtOutput.ScrollBars = "Both"; $txtOutput.Size = New-Object System.Drawing.Size(875, 490); $txtOutput.Location = New-Object System.Drawing.Point(15, 175)
+$txtOutput.Multiline = $true; $txtOutput.ScrollBars = "Both"; $txtOutput.Size = New-Object System.Drawing.Size(895, 500); $txtOutput.Location = New-Object System.Drawing.Point(15, 195)
 $txtOutput.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtOutput.ForeColor = [System.Drawing.Color]::Cyan; $txtOutput.Font = New-Object System.Drawing.Font("Consolas", 10)
 $tabPolyglot.Controls.Add($txtOutput)
 
 $tabControl.Controls.Add($tabPolyglot)
 
-# TAB 2: TC-UFT PHYSICS COMPUTE CORE & ZKP VERIFIER
+# TAB 2: ADVANCED TOPOLOGICAL PHYSICS & QUANTUM ENGINE
 $tabPhysics = New-Object System.Windows.Forms.TabPage
-$tabPhysics.Text = "Physics & ZKP Verifier"; $tabPhysics.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
-
-$lblPhysTitle = New-Object System.Windows.Forms.Label
-$lblPhysTitle.Text = "TC-UFT Isomorphic Physics & Zero-Knowledge Proof Evaluator"; $lblPhysTitle.Font = New-Object System.Drawing.Font("Segoe UI", 11, [System.Drawing.FontStyle]::Bold); $lblPhysTitle.ForeColor = [System.Drawing.Color]::Cyan; $lblPhysTitle.Location = New-Object System.Drawing.Point(15, 15); $lblPhysTitle.Size = New-Object System.Drawing.Size(600, 25)
-$tabPhysics.Controls.Add($lblPhysTitle)
-
-$cmbPhysMode = New-Object System.Windows.Forms.ComboBox
-$cmbPhysMode.Location = New-Object System.Drawing.Point(15, 48); $cmbPhysMode.Size = New-Object System.Drawing.Size(320, 28); $cmbPhysMode.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$cmbPhysMode.Items.Add("Electroweak Charged Current (u_L + W- -> d_L)") | Out-Null; $cmbPhysMode.Items.Add("Yukawa Chirality Flip (e_L + H -> e_R)") | Out-Null; $cmbPhysMode.Items.Add("QED Neutral Vertex (e_L + gamma -> e_L)") | Out-Null; $cmbPhysMode.Items.Add("Generational Tau Decay (3rd Gen -> 1st Gen)") | Out-Null; $cmbPhysMode.SelectedIndex = 0
-$tabPhysics.Controls.Add($cmbPhysMode)
+$tabPhysics.Text = "Physics & Quantum Core"; $tabPhysics.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $btnRunPhys = New-Object System.Windows.Forms.Button
-$btnRunPhys.Text = "Calculate Physics"; $btnRunPhys.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnRunPhys.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunPhys.ForeColor = [System.Drawing.Color]::White; $btnRunPhys.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnRunPhys.Size = New-Object System.Drawing.Size(200, 32); $btnRunPhys.Location = New-Object System.Drawing.Point(350, 46)
+$btnRunPhys.Text = "Run QFT/GR Core"; $btnRunPhys.Size = New-Object System.Drawing.Size(140, 32); $btnRunPhys.Location = New-Object System.Drawing.Point(15, 15); $btnRunPhys.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunPhys.ForeColor = "White"; $btnRunPhys.FlatStyle = "Flat"
 $tabPhysics.Controls.Add($btnRunPhys)
 
 $btnRunZKP = New-Object System.Windows.Forms.Button
-$btnRunZKP.Text = "Verify ZKP Braid Proof (O(1))"; $btnRunZKP.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold); $btnRunZKP.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunZKP.ForeColor = [System.Drawing.Color]::White; $btnRunZKP.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnRunZKP.Size = New-Object System.Drawing.Size(280, 32); $btnRunZKP.Location = New-Object System.Drawing.Point(560, 46)
+$btnRunZKP.Text = "Verify ZKP Proof"; $btnRunZKP.Size = New-Object System.Drawing.Size(140, 32); $btnRunZKP.Location = New-Object System.Drawing.Point(165, 15); $btnRunZKP.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunZKP.ForeColor = "White"; $btnRunZKP.FlatStyle = "Flat"
 $tabPhysics.Controls.Add($btnRunZKP)
 
+$btnRunSheaf = New-Object System.Windows.Forms.Button
+$btnRunSheaf.Text = "Sheaf Cohomology"; $btnRunSheaf.Size = New-Object System.Drawing.Size(140, 32); $btnRunSheaf.Location = New-Object System.Drawing.Point(315, 15); $btnRunSheaf.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunSheaf.ForeColor = "White"; $btnRunSheaf.FlatStyle = "Flat"
+$tabPhysics.Controls.Add($btnRunSheaf)
+
+$btnRunCasimir = New-Object System.Windows.Forms.Button
+$btnRunCasimir.Text = "Casimir Pressure"; $btnRunCasimir.Size = New-Object System.Drawing.Size(140, 32); $btnRunCasimir.Location = New-Object System.Drawing.Point(465, 15); $btnRunCasimir.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunCasimir.ForeColor = "White"; $btnRunCasimir.FlatStyle = "Flat"
+$tabPhysics.Controls.Add($btnRunCasimir)
+
+$btnRunAnyon = New-Object System.Windows.Forms.Button
+$btnRunAnyon.Text = "Anyon Fusion"; $btnRunAnyon.Size = New-Object System.Drawing.Size(120, 32); $btnRunAnyon.Location = New-Object System.Drawing.Point(615, 15); $btnRunAnyon.BackColor = [System.Drawing.Color]::FromArgb(220, 53, 69); $btnRunAnyon.ForeColor = "White"; $btnRunAnyon.FlatStyle = "Flat"
+$tabPhysics.Controls.Add($btnRunAnyon)
+
+$btnRunAttn = New-Object System.Windows.Forms.Button
+$btnRunAttn.Text = "Braid Attention"; $btnRunAttn.Size = New-Object System.Drawing.Size(135, 32); $btnRunAttn.Location = New-Object System.Drawing.Point(745, 15); $btnRunAttn.BackColor = [System.Drawing.Color]::FromArgb(220, 53, 69); $btnRunAttn.ForeColor = "White"; $btnRunAttn.FlatStyle = "Flat"
+$tabPhysics.Controls.Add($btnRunAttn)
+
 $txtPhysOut = New-Object System.Windows.Forms.TextBox
-$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(875, 580); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 95)
+$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(895, 640); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 60)
 $txtPhysOut.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtPhysOut.ForeColor = [System.Drawing.Color]::Yellow; $txtPhysOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $tabPhysics.Controls.Add($txtPhysOut)
 
@@ -127,27 +143,27 @@ $tabVis = New-Object System.Windows.Forms.TabPage
 $tabVis.Text = "Braid & E8 Visualizer"; $tabVis.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $pictureBox = New-Object System.Windows.Forms.PictureBox
-$pictureBox.Size = New-Object System.Drawing.Size(875, 470); $pictureBox.Location = New-Object System.Drawing.Point(15, 15); $pictureBox.BackColor = [System.Drawing.Color]::FromArgb(10, 12, 16)
+$pictureBox.Size = New-Object System.Drawing.Size(895, 500); $pictureBox.Location = New-Object System.Drawing.Point(15, 15); $pictureBox.BackColor = [System.Drawing.Color]::FromArgb(10, 12, 16)
 $tabVis.Controls.Add($pictureBox)
 
 $btnSigma1 = New-Object System.Windows.Forms.Button
-$btnSigma1.Text = "+ σ₁ (Twist 1-2)"; $btnSigma1.Size = New-Object System.Drawing.Size(140, 32); $btnSigma1.Location = New-Object System.Drawing.Point(15, 500); $btnSigma1.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma1.ForeColor = [System.Drawing.Color]::White; $btnSigma1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnSigma1.Text = "+ σ₁ (Twist 1-2)"; $btnSigma1.Size = New-Object System.Drawing.Size(140, 32); $btnSigma1.Location = New-Object System.Drawing.Point(15, 530); $btnSigma1.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma1.ForeColor = [System.Drawing.Color]::White; $btnSigma1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnSigma1)
 
 $btnSigma2 = New-Object System.Windows.Forms.Button
-$btnSigma2.Text = "+ σ₂ (Twist 2-3)"; $btnSigma2.Size = New-Object System.Drawing.Size(140, 32); $btnSigma2.Location = New-Object System.Drawing.Point(165, 500); $btnSigma2.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma2.ForeColor = [System.Drawing.Color]::White; $btnSigma2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnSigma2.Text = "+ σ₂ (Twist 2-3)"; $btnSigma2.Size = New-Object System.Drawing.Size(140, 32); $btnSigma2.Location = New-Object System.Drawing.Point(165, 530); $btnSigma2.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma2.ForeColor = [System.Drawing.Color]::White; $btnSigma2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnSigma2)
 
 $btnCollapse = New-Object System.Windows.Forms.Button
-$btnCollapse.Text = "Reidemeister Collapse"; $btnCollapse.Size = New-Object System.Drawing.Size(220, 32); $btnCollapse.Location = New-Object System.Drawing.Point(315, 500); $btnCollapse.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnCollapse.ForeColor = [System.Drawing.Color]::White; $btnCollapse.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnCollapse.Text = "Reidemeister Collapse"; $btnCollapse.Size = New-Object System.Drawing.Size(220, 32); $btnCollapse.Location = New-Object System.Drawing.Point(315, 530); $btnCollapse.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnCollapse.ForeColor = [System.Drawing.Color]::White; $btnCollapse.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnCollapse)
 
 $btnClear = New-Object System.Windows.Forms.Button
-$btnClear.Text = "Reset Braid"; $btnClear.Size = New-Object System.Drawing.Size(110, 32); $btnClear.Location = New-Object System.Drawing.Point(545, 500); $btnClear.BackColor = [System.Drawing.Color]::FromArgb(220, 53, 69); $btnClear.ForeColor = [System.Drawing.Color]::White; $btnClear.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnClear.Text = "Reset Braid"; $btnClear.Size = New-Object System.Drawing.Size(110, 32); $btnClear.Location = New-Object System.Drawing.Point(545, 530); $btnClear.BackColor = [System.Drawing.Color]::FromArgb(220, 53, 69); $btnClear.ForeColor = [System.Drawing.Color]::White; $btnClear.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnClear)
 
 $lblVisStatus = New-Object System.Windows.Forms.Label
-$lblVisStatus.Font = New-Object System.Drawing.Font("Consolas", 10.5, [System.Drawing.FontStyle]::Bold); $lblVisStatus.ForeColor = [System.Drawing.Color]::Cyan; $lblVisStatus.Location = New-Object System.Drawing.Point(15, 545); $lblVisStatus.Size = New-Object System.Drawing.Size(875, 120)
+$lblVisStatus.Font = New-Object System.Drawing.Font("Consolas", 10.5, [System.Drawing.FontStyle]::Bold); $lblVisStatus.ForeColor = [System.Drawing.Color]::Cyan; $lblVisStatus.Location = New-Object System.Drawing.Point(15, 575); $lblVisStatus.Size = New-Object System.Drawing.Size(895, 120)
 $tabVis.Controls.Add($lblVisStatus)
 
 $tabControl.Controls.Add($tabVis)
@@ -157,15 +173,15 @@ $tabStreams = New-Object System.Windows.Forms.TabPage
 $tabStreams.Text = "High-Throughput Ingestors"; $tabStreams.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
 
 $btnRunLHC = New-Object System.Windows.Forms.Button
-$btnRunLHC.Text = "Run LHC Vector Stream (10 Billion/s)"; $btnRunLHC.Size = New-Object System.Drawing.Size(300, 35); $btnRunLHC.Location = New-Object System.Drawing.Point(15, 20); $btnRunLHC.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunLHC.ForeColor = [System.Drawing.Color]::White; $btnRunLHC.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnRunLHC.Text = "Run LHC Vector Stream (10 Billion/s)"; $btnRunLHC.Size = New-Object System.Drawing.Size(300, 35); $btnRunLHC.Location = New-Object System.Drawing.Point(15, 20); $btnRunLHC.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunLHC.ForeColor = "White"; $btnRunLHC.FlatStyle = "Flat"
 $tabStreams.Controls.Add($btnRunLHC)
 
 $btnRunMempool = New-Object System.Windows.Forms.Button
-$btnRunMempool.Text = "Run Thermodynamic Mempool Stream"; $btnRunMempool.Size = New-Object System.Drawing.Size(300, 35); $btnRunMempool.Location = New-Object System.Drawing.Point(330, 20); $btnRunMempool.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunMempool.ForeColor = [System.Drawing.Color]::White; $btnRunMempool.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnRunMempool.Text = "Run Thermodynamic Mempool Stream"; $btnRunMempool.Size = New-Object System.Drawing.Size(300, 35); $btnRunMempool.Location = New-Object System.Drawing.Point(330, 20); $btnRunMempool.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunMempool.ForeColor = "White"; $btnRunMempool.FlatStyle = "Flat"
 $tabStreams.Controls.Add($btnRunMempool)
 
 $txtStreamOut = New-Object System.Windows.Forms.TextBox
-$txtStreamOut.Multiline = $true; $txtStreamOut.ScrollBars = "Both"; $txtStreamOut.Size = New-Object System.Drawing.Size(875, 600); $txtStreamOut.Location = New-Object System.Drawing.Point(15, 70)
+$txtStreamOut.Multiline = $true; $txtStreamOut.ScrollBars = "Both"; $txtStreamOut.Size = New-Object System.Drawing.Size(895, 640); $txtStreamOut.Location = New-Object System.Drawing.Point(15, 70)
 $txtStreamOut.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtStreamOut.ForeColor = [System.Drawing.Color]::LimeGreen; $txtStreamOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $tabStreams.Controls.Add($txtStreamOut)
 
@@ -192,7 +208,7 @@ $btnTuneIO.Text = "Run NVMe File System I/O & TRIM"; $btnTuneIO.Size = New-Objec
 $tabTuners.Controls.Add($btnTuneIO)
 
 $txtTunerOut = New-Object System.Windows.Forms.TextBox
-$txtTunerOut.Multiline = $true; $txtTunerOut.ScrollBars = "Both"; $txtTunerOut.Size = New-Object System.Drawing.Size(875, 540); $txtTunerOut.Location = New-Object System.Drawing.Point(15, 120)
+$txtTunerOut.Multiline = $true; $txtTunerOut.ScrollBars = "Both"; $txtTunerOut.Size = New-Object System.Drawing.Size(895, 580); $txtTunerOut.Location = New-Object System.Drawing.Point(15, 120)
 $txtTunerOut.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtTunerOut.ForeColor = [System.Drawing.Color]::Yellow; $txtTunerOut.Font = New-Object System.Drawing.Font("Consolas", 10)
 $txtTunerOut.Text = "Auto-Initializing System Optimizations and Game Directory Tuning..."
 $tabTuners.Controls.Add($txtTunerOut)
@@ -213,7 +229,7 @@ $btnOpenBrowser.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabWebHub.Controls.Add($btnOpenBrowser)
 
 $txtWebLog = New-Object System.Windows.Forms.TextBox
-$txtWebLog.Multiline = $true; $txtWebLog.ScrollBars = "Both"; $txtWebLog.Size = New-Object System.Drawing.Size(875, 580); $txtWebLog.Location = New-Object System.Drawing.Point(15, 70)
+$txtWebLog.Multiline = $true; $txtWebLog.ScrollBars = "Both"; $txtWebLog.Size = New-Object System.Drawing.Size(895, 620); $txtWebLog.Location = New-Object System.Drawing.Point(15, 70)
 $txtWebLog.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtWebLog.ForeColor = [System.Drawing.Color]::Cyan; $txtWebLog.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $txtWebLog.Text = "[+] Spatial 3D WebGPU Constellation Server Active at http://localhost:8090`r`n[+] Listening on 0.0.0.0:8090 for mobile browsers & VR headsets`r`n[+] Click button above to open interactive 3D canvas!"
 $tabWebHub.Controls.Add($txtWebLog)
@@ -224,6 +240,19 @@ $tabControl.Controls.Add($tabWebHub)
 $form.Controls.Add($tabControl)
 
 # ALL-STREAM REDIRECTION CALL HELPERS (*>&1)
+function Execute-GeometricTokenizer {
+    $promptText = $txtPrompt.Text
+    $exePath = ".\topological_geometric_tokenizer.exe"
+
+    if (Test-Path $exePath) {
+        $promptClean = $promptText -replace "`r`n", " " -replace "`n", " "
+        $result = & $exePath $promptClean *>&1 | Out-String
+        $txtOutput.Text = $result
+    } else {
+        Execute-SemanticCompiler
+    }
+}
+
 function Execute-SemanticCompiler {
     $promptText = $txtPrompt.Text
     $selectedLang = $cmbLang.SelectedItem.ToString()
@@ -237,25 +266,9 @@ function Execute-SemanticCompiler {
 }
 
 function Execute-PhysicsCore {
-    $modeArg = "ew"
-    if ($cmbPhysMode.SelectedIndex -eq 1) { $modeArg = "yukawa" }
-    if ($cmbPhysMode.SelectedIndex -eq 2) { $modeArg = "qed" }
-    if ($cmbPhysMode.SelectedIndex -eq 3) { $modeArg = "tau_decay" }
-
-    $exePath = ".\topological_physics_core.exe"
-
-    if (Test-Path $exePath) {
-        $result = & $exePath $modeArg *>&1 | Out-String
-        $txtPhysOut.Text = $result
-    } else { $txtPhysOut.Text = "[!] Missing topological_physics_core.exe." }
-}
-
-function Execute-ZKPVerifier {
-    $exePath = ".\topological_zkp_verifier.exe"
-    if (Test-Path $exePath) {
-        $result = & $exePath *>&1 | Out-String
-        $txtPhysOut.Text = $result
-    } else { $txtPhysOut.Text = "[!] Missing topological_zkp_verifier.exe." }
+    if (Test-Path ".\topological_physics_core.exe") {
+        $txtPhysOut.Text = & ".\topological_physics_core.exe" "ew" *>&1 | Out-String
+    }
 }
 
 function Sync-AllTabsFromBraidState {
@@ -282,6 +295,36 @@ function Sync-AllTabsFromBraidState {
     Execute-PhysicsCore
 }
 
+# TAB 1 ONE-CLICK CLIPBOARD COPY HANDLER
+$btnCopyCode.add_Click({
+    if ($txtOutput.Text) {
+        $cleanCode = $txtOutput.Text -replace "^```[a-zA-Z]*`r?`n", "" -replace "`r?`n```$", ""
+        [System.Windows.Forms.Clipboard]::SetText($cleanCode)
+        [System.Windows.Forms.MessageBox]::Show("Compiled Code Copied Directly to Clipboard!", "ACT-Ω Code Export", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+    }
+})
+
+# TAB 1 ONE-CLICK DIRECT FILE EXPORT HANDLER
+$btnSaveFile.add_Click({
+    if ($txtOutput.Text) {
+        $selectedLang = $cmbLang.SelectedItem.ToString().ToLower()
+        $ext = ".rs"
+        if ($selectedLang -eq "python") { $ext = ".py" }
+        elseif ($selectedLang -eq "c/c++" -or $selectedLang -eq "c++") { $ext = ".cpp" }
+        elseif ($selectedLang -eq "typescript" -or $selectedLang -eq "deno ffi") { $ext = ".ts" }
+
+        $saveDialog = New-Object System.Windows.Forms.SaveFileDialog
+        $saveDialog.Filter = "Source Code File (*$ext)|*$ext|All Files (*.*)|*.*"
+        $saveDialog.FileName = "topological_generated_code$ext"
+        
+        if ($saveDialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+            $cleanCode = $txtOutput.Text -replace "^```[a-zA-Z]*`r?`n", "" -replace "`r?`n```$", ""
+            [System.IO.File]::WriteAllText($saveDialog.FileName, $cleanCode)
+            [System.Windows.Forms.MessageBox]::Show("Code Saved Directly to File: $($saveDialog.FileName)", "ACT-Ω File Export", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+        }
+    }
+})
+
 $pictureBox.add_Paint({
     param($sender, $e)
     $g = $e.Graphics; $g.SmoothingMode = "AntiAlias"
@@ -305,7 +348,7 @@ $pictureBox.add_Paint({
         $currX = $nextX
     }
 
-    $centerX = 720; $centerY = 210; $radius = 80
+    $centerX = 740; $centerY = 210; $radius = 80
     $penE8 = New-Object System.Drawing.Pen([System.Drawing.Color]::LimeGreen, 2)
     for ($i = 0; $i -lt 8; $i++) {
         $angleA = ($i * 45) * [Math]::PI / 180
@@ -342,19 +385,17 @@ $btnTuneGPU.add_Click({ if (Test-Path ".\topological_gpu_tuner.ps1") { $txtTuner
 $btnTuneGames.add_Click({ if (Test-Path ".\topological_ini_tuner.ps1") { $txtTunerOut.Text = & ".\topological_ini_tuner.ps1" *>&1 | Out-String } })
 $btnTuneIO.add_Click({ if (Test-Path ".\topological_io_tuner.ps1") { $txtTunerOut.Text = & ".\topological_io_tuner.ps1" *>&1 | Out-String } })
 
-$cmbPhysMode.add_SelectedIndexChanged({
-    $script:braidGenerators.Clear()
-    if ($cmbPhysMode.SelectedIndex -eq 0) { $script:braidGenerators.Add(1); $script:braidGenerators.Add(2); $script:braidGenerators.Add(-1); $script:braidGenerators.Add(2); $script:braidGenerators.Add(1) }
-    elseif ($cmbPhysMode.SelectedIndex -eq 1) { $script:braidGenerators.Add(-1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(-1); $script:braidGenerators.Add(-1) }
-    elseif ($cmbPhysMode.SelectedIndex -eq 2) { $script:braidGenerators.Add(-1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(-1) }
-    elseif ($cmbPhysMode.SelectedIndex -eq 3) { $script:braidGenerators.Add(1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(1); $script:braidGenerators.Add(1) }
-    Sync-AllTabsFromBraidState
-})
+# Physics Tab Extra Button Actions
+$btnRunPhys.add_Click({ Execute-PhysicsCore })
+$btnRunZKP.add_Click({ if (Test-Path ".\topological_zkp_verifier.exe") { $txtPhysOut.Text = & ".\topological_zkp_verifier.exe" *>&1 | Out-String } })
+$btnRunSheaf.add_Click({ if (Test-Path ".\topological_sheaf_cohomology.exe") { $txtPhysOut.Text = & ".\topological_sheaf_cohomology.exe" *>&1 | Out-String } })
+$btnRunCasimir.add_Click({ if (Test-Path ".\topological_casimir_force.exe") { $txtPhysOut.Text = & ".\topological_casimir_force.exe" *>&1 | Out-String } })
+$btnRunAnyon.add_Click({ if (Test-Path ".\topological_anyon_braid.exe") { $txtPhysOut.Text = & ".\topological_anyon_braid.exe" *>&1 | Out-String } })
+$btnRunAttn.add_Click({ if (Test-Path ".\topological_braid_attention.exe") { $txtPhysOut.Text = & ".\topological_braid_attention.exe" *>&1 | Out-String } })
 
 $cmbLang.add_SelectedIndexChanged({ Execute-SemanticCompiler })
 $btnCompile.add_Click({ Execute-SemanticCompiler })
-$btnRunPhys.add_Click({ Execute-PhysicsCore })
-$btnRunZKP.add_Click({ Execute-ZKPVerifier })
+$btnTokenize.add_Click({ Execute-GeometricTokenizer })
 
 # INITIAL LAUNCH AUTO-INITIALIZATION PASS
 Sync-AllTabsFromBraidState
