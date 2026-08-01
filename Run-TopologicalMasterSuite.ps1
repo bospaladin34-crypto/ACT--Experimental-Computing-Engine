@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω Topological System Master Orchestrator & Comprehensive Suite Launcher
-# Compiles All 37 Native Rust Subsystems, Runs Diagnostics, Builds EXE & Launches GUI
+# Compiles All 44 Native Rust Subsystems, Runs Diagnostics, Builds EXE & Launches GUI
 # ============================================================================
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
@@ -22,47 +22,54 @@ Write-Host "============================================================" -Foreg
 Write-Host " [ACT-Ω v25.0] Launching Master Autonomous Topological Suite" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor DarkCyan
 
-# 1. COMPILE ALL 37 NATIVE RUST SUBSYSTEMS
-Write-Host "`n[1/5] Verifying & Compiling All 37 Native Rust Subsystems (-O Optimization)..." -ForegroundColor Yellow
+# 1. COMPILE ALL 44 NATIVE RUST SUBSYSTEMS
+Write-Host "`n[1/5] Verifying & Compiling All 44 Native Rust Subsystems (-O Optimization)..." -ForegroundColor Yellow
 
 $rustFiles = @(
-    "topological_optimizer.rs",
-    "topological_hyper_manifold.rs",
-    "topological_mod_solver.rs",
-    "topological_stress_benchmark_failsafe.rs",
     "braid_compiler.rs",
-    "topological_semantic_compiler.rs",
-    "topological_physics_core.rs",
-    "topological_lhc_ingestor.rs",
-    "topological_mempool_engine.rs",
-    "topological_background_daemon.rs",
-    "topological_audio_resonator.rs",
-    "topological_cadence_lock.rs",
-    "topological_proot_bridge.rs",
-    "topological_governor.rs",
-    "topological_web_hub.rs",
-    "topological_lsp.rs",
-    "topological_llm_middleware.rs",
     "topological_adapter_sdk.rs",
-    "topological_dma_cavity.rs",
-    "topological_git_sync.rs",
-    "topological_self_healer.rs",
-    "topological_zkp_verifier.rs",
-    "topological_sheaf_cohomology.rs",
+    "topological_agent_daemon.rs",
+    "topological_agent_planner.rs",
+    "topological_anyon_braid.rs",
+    "topological_ast_refactor.rs",
+    "topological_audio_resonator.rs",
+    "topological_auto_injector.rs",
+    "topological_autonomous_integrator.rs",
+    "topological_background_daemon.rs",
+    "topological_braid_attention.rs",
+    "topological_cadence_lock.rs",
+    "topological_calabi_yau.rs",
     "topological_casimir_force.rs",
     "topological_chiral_anomaly.rs",
-    "topological_gravitational_lensing.rs",
-    "topological_anyon_braid.rs",
-    "topological_braid_attention.rs",
-    "topological_geometric_tokenizer.rs",
-    "topological_memory_guard.rs",
     "topological_cluster_mesh.rs",
-    "topological_spatial_audio.rs",
-    "topological_agent_planner.rs",
-    "topological_agent_daemon.rs",
+    "topological_dma_cavity.rs",
     "topological_event_cascade.rs",
+    "topological_geometric_tokenizer.rs",
+    "topological_git_sync.rs",
+    "topological_governor.rs",
+    "topological_gravitational_lensing.rs",
+    "topological_hyper_manifold.rs",
+    "topological_legacy_bridge.rs",
+    "topological_lhc_ingestor.rs",
+    "topological_llm_middleware.rs",
+    "topological_lsp.rs",
+    "topological_memory_guard.rs",
+    "topological_mempool_engine.rs",
+    "topological_mod_solver.rs",
     "topological_module_registry.rs",
-    "topological_autonomous_integrator.rs"
+    "topological_optimizer.rs",
+    "topological_physics_core.rs",
+    "topological_proot_bridge.rs",
+    "topological_qcd_flux.rs",
+    "topological_self_healer.rs",
+    "topological_semantic_compiler.rs",
+    "topological_sheaf_cohomology.rs",
+    "topological_spatial_audio.rs",
+    "topological_stress_benchmark.rs",
+    "topological_stress_benchmark_failsafe.rs",
+    "topological_web_hub.rs",
+    "topological_web_scraper.rs",
+    "topological_zkp_verifier.rs"
 )
 
 $compiledCount = 0
@@ -117,14 +124,24 @@ if (Test-Path ".\topological_event_cascade.exe") {
     & ".\topological_event_cascade.exe" "INTENT_MEMORY_PRESSURE"
 }
 
-if (Test-Path ".\topological_memory_guard.exe") {
-    Write-Host "`n --- Diagnostic: Topological Memory Guard ---" -ForegroundColor Cyan
-    & ".\topological_memory_guard.exe"
+if (Test-Path ".\topological_ast_refactor.exe") {
+    Write-Host "`n --- Diagnostic: AST Topological Code Refactorer ---" -ForegroundColor Cyan
+    & ".\topological_ast_refactor.exe"
 }
 
-if (Test-Path ".\topological_cluster_mesh.exe") {
-    Write-Host "`n --- Diagnostic: Multi-Node Swarm Mesh ---" -ForegroundColor Cyan
-    & ".\topological_cluster_mesh.exe"
+if (Test-Path ".\topological_calabi_yau.exe") {
+    Write-Host "`n --- Diagnostic: Superstring Calabi-Yau Solver ---" -ForegroundColor Cyan
+    & ".\topological_calabi_yau.exe"
+}
+
+if (Test-Path ".\topological_qcd_flux.exe") {
+    Write-Host "`n --- Diagnostic: QCD Color-Confinement Engine ---" -ForegroundColor Cyan
+    & ".\topological_qcd_flux.exe"
+}
+
+if (Test-Path ".\topological_web_scraper.exe") {
+    Write-Host "`n --- Diagnostic: Standalone Topological Web Scraper ---" -ForegroundColor Cyan
+    & ".\topological_web_scraper.exe" "http://example.com/index.html"
 }
 
 # 4. RE-COMPILE MASTER EXECUTABLE TO EMBED LATEST CONTROLS
