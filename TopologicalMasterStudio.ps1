@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω Unified Master Topological Studio & Autonomous Control Center
-# STA Thread Safe, Tab 1 Prominent One-Click Copy & Direct File Export Buttons
+# STA Thread Safe, Tab 7 Integrated Event Cascade & Autonomous Mesh Inspector
 # ============================================================================
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -26,8 +26,8 @@ if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
 }
 
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "ACT-Ω v25.0 Master Topological Control Center (One-Click Copy & Export Active)"
-$form.Size = New-Object System.Drawing.Size(1000, 900)
+$form.Text = "ACT-Ω v25.0 Master Topological Control Center (7 Tabs Active | Event Cascade Inspector Enabled)"
+$form.Size = New-Object System.Drawing.Size(1000, 920)
 $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(20, 24, 32)
 $form.ForeColor = [System.Drawing.Color]::White
@@ -46,7 +46,7 @@ $lblTitle.Size = New-Object System.Drawing.Size(940, 30)
 $form.Controls.Add($lblTitle)
 
 $lblSub = New-Object System.Windows.Forms.Label
-$lblSub.Text = "One-Click Code Export: Copy Directly to Clipboard or Auto-Save Code Files Without Manual Editing"
+$lblSub.Text = "Autonomous Integrator & Event Cascade Active: Dynamic E8 Vector Matching (cos θ ≥ 0.85) & Hot-Registration"
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.5)
 $lblSub.ForeColor = [System.Drawing.Color]::LightGray
 $lblSub.Location = New-Object System.Drawing.Point(20, 45)
@@ -56,7 +56,7 @@ $form.Controls.Add($lblSub)
 # Tab Control Setup
 $tabControl = New-Object System.Windows.Forms.TabControl
 $tabControl.Location = New-Object System.Drawing.Point(20, 75)
-$tabControl.Size = New-Object System.Drawing.Size(940, 760)
+$tabControl.Size = New-Object System.Drawing.Size(940, 780)
 
 # TAB 1: POLYGLOT CODE GENERATOR & DEDICATED EXPORT ACTION ROW
 $tabPolyglot = New-Object System.Windows.Forms.TabPage
@@ -91,7 +91,7 @@ $btnTokenize = New-Object System.Windows.Forms.Button
 $btnTokenize.Text = "Geometrically Compress Prompt"; $btnTokenize.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $btnTokenize.BackColor = [System.Drawing.Color]::FromArgb(108, 117, 125); $btnTokenize.ForeColor = [System.Drawing.Color]::White; $btnTokenize.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnTokenize.Size = New-Object System.Drawing.Size(260, 32); $btnTokenize.Location = New-Object System.Drawing.Point(470, 107)
 $tabPolyglot.Controls.Add($btnTokenize)
 
-# ROW 2: EXPORT BUTTONS (PROMINENT & BRIGHT)
+# ROW 2: EXPORT BUTTONS
 $btnCopyCode = New-Object System.Windows.Forms.Button
 $btnCopyCode.Text = "COPY CODE TO CLIPBOARD"; $btnCopyCode.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnCopyCode.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnCopyCode.ForeColor = [System.Drawing.Color]::White; $btnCopyCode.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCopyCode.Size = New-Object System.Drawing.Size(430, 38); $btnCopyCode.Location = New-Object System.Drawing.Point(15, 148)
 $tabPolyglot.Controls.Add($btnCopyCode)
@@ -136,7 +136,7 @@ $btnRunAttn.Text = "Braid Attention"; $btnRunAttn.Size = New-Object System.Drawi
 $tabPhysics.Controls.Add($btnRunAttn)
 
 $txtPhysOut = New-Object System.Windows.Forms.TextBox
-$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(895, 640); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 60)
+$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(895, 660); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 60)
 $txtPhysOut.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtPhysOut.ForeColor = [System.Drawing.Color]::Yellow; $txtPhysOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $tabPhysics.Controls.Add($txtPhysOut)
 
@@ -240,6 +240,39 @@ $tabWebHub.Controls.Add($txtWebLog)
 
 $btnOpenBrowser.add_Click({ Start-Process "http://localhost:8090" })
 $tabControl.Controls.Add($tabWebHub)
+
+# TAB 7: AUTONOMOUS INTEGRATOR & EVENT CASCADE MESH INSPECTOR
+$tabCascade = New-Object System.Windows.Forms.TabPage
+$tabCascade.Text = "Event Cascade & Mesh Inspector"; $tabCascade.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 26)
+
+$btnRunIntegrator = New-Object System.Windows.Forms.Button
+$btnRunIntegrator.Text = "Run Autonomous Integrator Pass"; $btnRunIntegrator.Size = New-Object System.Drawing.Size(260, 35); $btnRunIntegrator.Location = New-Object System.Drawing.Point(15, 18); $btnRunIntegrator.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunIntegrator.ForeColor = "White"; $btnRunIntegrator.FlatStyle = "Flat"
+$tabCascade.Controls.Add($btnRunIntegrator)
+
+$btnRunCascade = New-Object System.Windows.Forms.Button
+$btnRunCascade.Text = "Fire Event Cascade Engine"; $btnRunCascade.Size = New-Object System.Drawing.Size(220, 35); $btnRunCascade.Location = New-Object System.Drawing.Point(285, 18); $btnRunCascade.BackColor = [System.Drawing.Color]::FromArgb(40, 167, 69); $btnRunCascade.ForeColor = "White"; $btnRunCascade.FlatStyle = "Flat"
+$tabCascade.Controls.Add($btnRunCascade)
+
+$btnRunRegistry = New-Object System.Windows.Forms.Button
+$btnRunRegistry.Text = "Scan Dynamic Module Registry"; $btnRunRegistry.Size = New-Object System.Drawing.Size(220, 35); $btnRunRegistry.Location = New-Object System.Drawing.Point(515, 18); $btnRunRegistry.BackColor = [System.Drawing.Color]::FromArgb(255, 193, 7); $btnRunRegistry.ForeColor = "Black"; $btnRunRegistry.FlatStyle = "Flat"
+$tabCascade.Controls.Add($btnRunRegistry)
+
+$btnRunSwarm = New-Object System.Windows.Forms.Button
+$btnRunSwarm.Text = "Ping Swarm Mesh"; $btnRunSwarm.Size = New-Object System.Drawing.Size(160, 35); $btnRunSwarm.Location = New-Object System.Drawing.Point(745, 18); $btnRunSwarm.BackColor = [System.Drawing.Color]::FromArgb(220, 53, 69); $btnRunSwarm.ForeColor = "White"; $btnRunSwarm.FlatStyle = "Flat"
+$tabCascade.Controls.Add($btnRunSwarm)
+
+$txtCascadeOut = New-Object System.Windows.Forms.TextBox
+$txtCascadeOut.Multiline = $true; $txtCascadeOut.ScrollBars = "Both"; $txtCascadeOut.Size = New-Object System.Drawing.Size(895, 640); $txtCascadeOut.Location = New-Object System.Drawing.Point(15, 65)
+$txtCascadeOut.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 12); $txtCascadeOut.ForeColor = [System.Drawing.Color]::LimeGreen; $txtCascadeOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
+$txtCascadeOut.Text = "[+] Dynamic Topological Event Cascade Engine Active.`r`n[+] Click buttons above to execute autonomous integration passes, scan module capability maps, or ping local network swarm mesh nodes."
+$tabCascade.Controls.Add($txtCascadeOut)
+
+$btnRunIntegrator.add_Click({ if (Test-Path ".\topological_autonomous_integrator.exe") { $txtCascadeOut.Text = & ".\topological_autonomous_integrator.exe" *>&1 | Out-String } })
+$btnRunCascade.add_Click({ if (Test-Path ".\topological_event_cascade.exe") { $txtCascadeOut.Text = & ".\topological_event_cascade.exe" "INTENT_MEMORY_PRESSURE" *>&1 | Out-String } })
+$btnRunRegistry.add_Click({ if (Test-Path ".\topological_module_registry.exe") { $txtCascadeOut.Text = & ".\topological_module_registry.exe" *>&1 | Out-String } })
+$btnRunSwarm.add_Click({ if (Test-Path ".\topological_cluster_mesh.exe") { $txtCascadeOut.Text = & ".\topological_cluster_mesh.exe" *>&1 | Out-String } })
+
+$tabControl.Controls.Add($tabCascade)
 
 $form.Controls.Add($tabControl)
 
