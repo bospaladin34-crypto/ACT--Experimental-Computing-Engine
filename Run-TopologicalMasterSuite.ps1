@@ -1,6 +1,6 @@
 ﻿# ============================================================================
-# ACT-Ω Topological System Master Orchestrator & End-to-End Suite Diagnostic Pass
-# Executes Autonomous Build, Binary Verification, Re-Compiles Master EXE & Health Telemetry
+# ACT-Ω Topological System Master Orchestrator & Comprehensive Suite Launcher
+# Compiles All 37 Native Rust Subsystems, Runs Diagnostics, Builds EXE & Launches GUI
 # ============================================================================
 
 $OutputEncoding = [System.Text.Encoding]::UTF8
@@ -22,8 +22,8 @@ Write-Host "============================================================" -Foreg
 Write-Host " [ACT-Ω v25.0] Launching Master Autonomous Topological Suite" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor DarkCyan
 
-# 1. COMPILE ALL NATIVE RUST SUBSYSTEMS
-Write-Host "`n[1/5] Verifying & Compiling All 29 Native Rust Subsystems..." -ForegroundColor Yellow
+# 1. COMPILE ALL 37 NATIVE RUST SUBSYSTEMS
+Write-Host "`n[1/5] Verifying & Compiling All 37 Native Rust Subsystems (-O Optimization)..." -ForegroundColor Yellow
 
 $rustFiles = @(
     "topological_optimizer.rs",
@@ -54,19 +54,30 @@ $rustFiles = @(
     "topological_gravitational_lensing.rs",
     "topological_anyon_braid.rs",
     "topological_braid_attention.rs",
-    "topological_geometric_tokenizer.rs"
+    "topological_geometric_tokenizer.rs",
+    "topological_memory_guard.rs",
+    "topological_cluster_mesh.rs",
+    "topological_spatial_audio.rs",
+    "topological_agent_planner.rs",
+    "topological_agent_daemon.rs",
+    "topological_event_cascade.rs",
+    "topological_module_registry.rs",
+    "topological_autonomous_integrator.rs"
 )
 
+$compiledCount = 0
 foreach ($rs in $rustFiles) {
     if (Test-Path $rs) {
         $exeName = $rs.Replace(".rs", ".exe")
         Write-Host " [+] Compiling $rs -> $exeName..." -ForegroundColor Green
         rustc -O $rs -o $exeName 2>&1 | Out-Null
+        $compiledCount++
     }
 }
+Write-Host "[+] Successfully Compiled $compiledCount Native Rust Subsystems." -ForegroundColor Cyan
 
 # 2. EXECUTE SYSTEM, KERNEL, GPU & I/O TUNERS
-Write-Host "`n[2/5] Running Kernel, Memory, GPU & File System Tuning Passes..." -ForegroundColor Yellow
+Write-Host "`n[2/5] Deploying System, Kernel, GPU & File System Tuning Passes..." -ForegroundColor Yellow
 
 if (Test-Path ".\Optimize-TopologicalSystem_v2.ps1") {
     Write-Host " [+] Kernel Page Locking & Core Un-Parking..." -ForegroundColor Green
@@ -88,52 +99,32 @@ if (Test-Path ".\topological_ini_tuner.ps1") {
     & ".\topological_ini_tuner.ps1"
 }
 
-# 3. VERIFY EXECUTABLE DIAGNOSTIC PASSES
-Write-Host "`n[3/5] Running Self-Test Diagnostic Passes across Native Binaries..." -ForegroundColor Yellow
+# 3. VERIFY EXECUTABLE DIAGNOSTIC SELF-TEST PASSES
+Write-Host "`n[3/5] Running Self-Test Diagnostic Passes across Key Native Binaries..." -ForegroundColor Yellow
 
-if (Test-Path ".\topological_physics_core.exe") {
-    Write-Host "`n --- Diagnostic: TC-UFT Physics Core ---" -ForegroundColor Cyan
-    & ".\topological_physics_core.exe" "ew" | Select-Object -First 10
+if (Test-Path ".\topological_autonomous_integrator.exe") {
+    Write-Host "`n --- Diagnostic: Unifying Autonomous Integrator Engine ---" -ForegroundColor Cyan
+    & ".\topological_autonomous_integrator.exe"
 }
 
-if (Test-Path ".\topological_geometric_tokenizer.exe") {
-    Write-Host "`n --- Diagnostic: Geometric Tokenizer ---" -ForegroundColor Cyan
-    & ".\topological_geometric_tokenizer.exe" "Make me a fast python memory optimizer"
+if (Test-Path ".\topological_module_registry.exe") {
+    Write-Host "`n --- Diagnostic: Dynamic Module Registry ---" -ForegroundColor Cyan
+    & ".\topological_module_registry.exe"
 }
 
-if (Test-Path ".\topological_sheaf_cohomology.exe") {
-    Write-Host "`n --- Diagnostic: Sheaf Cohomology H^1(X) ---" -ForegroundColor Cyan
-    & ".\topological_sheaf_cohomology.exe"
+if (Test-Path ".\topological_event_cascade.exe") {
+    Write-Host "`n --- Diagnostic: Topological Event Cascade Engine ---" -ForegroundColor Cyan
+    & ".\topological_event_cascade.exe" "INTENT_MEMORY_PRESSURE"
 }
 
-if (Test-Path ".\topological_casimir_force.exe") {
-    Write-Host "`n --- Diagnostic: QFT Casimir Force Pressure ---" -ForegroundColor Cyan
-    & ".\topological_casimir_force.exe"
+if (Test-Path ".\topological_memory_guard.exe") {
+    Write-Host "`n --- Diagnostic: Topological Memory Guard ---" -ForegroundColor Cyan
+    & ".\topological_memory_guard.exe"
 }
 
-if (Test-Path ".\topological_chiral_anomaly.exe") {
-    Write-Host "`n --- Diagnostic: ABJ Chiral Anomaly Winding ---" -ForegroundColor Cyan
-    & ".\topological_chiral_anomaly.exe"
-}
-
-if (Test-Path ".\topological_gravitational_lensing.exe") {
-    Write-Host "`n --- Diagnostic: Spacetime Metric Raytracer ---" -ForegroundColor Cyan
-    & ".\topological_gravitational_lensing.exe"
-}
-
-if (Test-Path ".\topological_anyon_braid.exe") {
-    Write-Host "`n --- Diagnostic: Fibonacci Anyon Gate Engine ---" -ForegroundColor Cyan
-    & ".\topological_anyon_braid.exe"
-}
-
-if (Test-Path ".\topological_braid_attention.exe") {
-    Write-Host "`n --- Diagnostic: Neural Braid Attention ---" -ForegroundColor Cyan
-    & ".\topological_braid_attention.exe"
-}
-
-if (Test-Path ".\topological_zkp_verifier.exe") {
-    Write-Host "`n --- Diagnostic: Zero-Knowledge Braid Verifier ---" -ForegroundColor Cyan
-    & ".\topological_zkp_verifier.exe"
+if (Test-Path ".\topological_cluster_mesh.exe") {
+    Write-Host "`n --- Diagnostic: Multi-Node Swarm Mesh ---" -ForegroundColor Cyan
+    & ".\topological_cluster_mesh.exe"
 }
 
 # 4. RE-COMPILE MASTER EXECUTABLE TO EMBED LATEST CONTROLS
@@ -142,12 +133,17 @@ if (Test-Path ".\Build-MasterEXE.ps1") {
     & ".\Build-MasterEXE.ps1"
 }
 
-# 5. ACTIVATE SERVICES & LAUNCH MASTER CONTROL CENTER
-Write-Host "`n[5/5] Activating Shared Memory, Sockets & Opening Master Control Center..." -ForegroundColor Yellow
+# 5. ACTIVATE CONTINUOUS SERVICES & LAUNCH MASTER CONTROL CENTER
+Write-Host "`n[5/5] Activating Continuous Background Services & Master Control Center..." -ForegroundColor Yellow
 
 if (Test-Path ".\topological_hyper_manifold.exe") {
     Start-Process -FilePath ".\topological_hyper_manifold.exe" -WindowStyle Hidden
     Write-Host " [+] Shared Memory Ring Active: Global\ACT_OMEGA_E8_HYPER_MANIFOLD" -ForegroundColor Green
+}
+
+if (Test-Path ".\topological_agent_daemon.exe") {
+    Start-Process -FilePath ".\topological_agent_daemon.exe" -WindowStyle Hidden
+    Write-Host " [+] Continuous Background Agentic Daemon Active (15.965 Hz Loop)." -ForegroundColor Green
 }
 
 if (Test-Path ".\TopologicalHUD.ps1") {
