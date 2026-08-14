@@ -1,0 +1,138 @@
+*ApachiiHair.esm
+*ccafdsse001-dwesanctuary.esm
+*ccasvsse001-almsivi.esm
+*ccbgssse001-fish.esm
+*ccbgssse016-umbra.esm
+*ccbgssse025-advdsgs.esm
+*ccbgssse031-advcyrus.esm
+*ccbgssse067-daedinv.esm
+*cceejsse001-hstead.esm
+*cceejsse005-cave.esm
+*cctwbsse001-puzzledungeon.esm
+*Dawnguard.esm
+*Dragonborn.esm
+*HearthFires.esm
+*LegacyoftheDragonborn.esm
+*RealisticWaterTwo - Resources.esm
+*Skyrim.esm
+*Update.esm
+*_ResourcePack.esl
+*ccbgssse002-exoticarrows.esl
+*ccbgssse003-zombies.esl
+*ccbgssse004-ruinsedge.esl
+*ccbgssse005-goldbrand.esl
+*ccbgssse006-stendarshammer.esl
+*ccbgssse007-chrysamere.esl
+*ccbgssse008-wraithguard.esl
+*ccbgssse010-petdwarvenarmoredmudcrab.esl
+*ccbgssse011-hrsarmrelvn.esl
+*ccbgssse012-hrsarmrstl.esl
+*ccbgssse013-dawnfang.esl
+*ccbgssse014-spellpack01.esl
+*ccbgssse018-shadowrend.esl
+*ccbgssse019-staffofsheogorath.esl
+*ccbgssse020-graycowl.esl
+*ccbgssse021-lordsmail.esl
+*ccbgssse034-mntuni.esl
+*ccbgssse035-petnhound.esl
+*ccbgssse036-petbwolf.esl
+*ccbgssse037-curios.esl
+*ccbgssse038-bowofshadows.esl
+*ccbgssse040-advobgobs.esl
+*ccbgssse041-netchleather.esl
+*ccbgssse043-crosselv.esl
+*ccbgssse045-hasedoki.esl
+*ccbgssse050-ba_daedric.esl
+*ccbgssse051-ba_daedricmail.esl
+*ccbgssse052-ba_iron.esl
+*ccbgssse053-ba_leather.esl
+*ccbgssse054-ba_orcish.esl
+*ccbgssse055-ba_orcishscaled.esl
+*ccbgssse056-ba_silver.esl
+*ccbgssse057-ba_stalhrim.esl
+*ccbgssse058-ba_steel.esl
+*ccbgssse059-ba_dragonplate.esl
+*ccbgssse060-ba_dragonscale.esl
+*ccbgssse061-ba_dwarven.esl
+*ccbgssse062-ba_dwarvenmail.esl
+*ccbgssse063-ba_ebony.esl
+*ccbgssse064-ba_elven.esl
+*ccbgssse066-staves.esl
+*ccbgssse068-bloodfall.esl
+*ccbgssse069-contest.esl
+*cccbhsse001-gaunt.esl
+*ccedhsse001-norjewel.esl
+*ccedhsse002-splkntset.esl
+*ccedhsse003-redguard.esl
+*cceejsse002-tower.esl
+*cceejsse003-hollow.esl
+*cceejsse004-hall.esl
+*ccffbsse001-imperialdragon.esl
+*ccffbsse002-crossbowpack.esl
+*ccfsvsse001-backpacks.esl
+*cckrtsse001_altar.esl
+*ccmtysse001-knightsofthenine.esl
+*ccmtysse002-ve.esl
+*ccpewsse002-armsofchaos.esl
+*ccqdrsse001-survivalmode.esl
+*ccqdrsse002-firewood.esl
+*ccrmssse001-necrohouse.esl
+*ccvsvsse001-winter.esl
+*ccvsvsse002-pets.esl
+*ccvsvsse003-necroarts.esl
+*ccvsvsse004-beafarmer.esl
+*aessmeltdown.esp
+*Aethernautics.esp
+*aMidianBorn_Book of Silence.esp
+*Apocalypse - Magic of Skyrim.esp
+*Apocalypse - Ordinator Compatibility Patch.esp
+*ars metallica.esp
+*ArtisansOfSkyrim.esp
+*BlendedRoads.esp
+*Cathedral Weathers.esp
+*Conditional Expressions.esp
+*Convenient Horses.esp
+*DBM_SMIM_Patch.esp
+*DovahEnch.esp
+*DragonLandingOverhaul.esp
+*FloatingSubtitles.esp
+*FNIS.esp
+*Folkvangr - Grass and Landscape Overhaul.esp
+*GlamorilLite.esp
+*Hunting in Skyrim.esp
+*Immersive Horses.esp
+*Immersive Patrols II.esp
+*kinggathcreations_eastempirecompany.esp
+*LegacyoftheDragonborn0.esp
+*MaximumCarnage.esp
+*MaximumSkeletons.esp
+*MCMHelper.esp
+*Missives.esp
+*MoreBanditCamps.esp
+*MysticismMagic.esp
+*MysticOrdinator.esp
+*notice board.esp
+*NPC Spell Variance Assets.esp
+*NPC Spell Variance.esp
+*NSV Spell Copies.esp
+*Odin - Ordinator Compatibility Patch.esp
+*Odin - Skyrim Magic Overhaul.esp
+*Ordinator - Perks of Skyrim.esp
+*Precision.esp
+*RealisticWaterTwo - Myrwatch Patch.esp
+*RealisticWaterTwo.esp
+*Rebalanced Encounter Zones.esp
+*Relationship Dialogue Overhaul.esp
+*sarcasticdragon's snarky loading screens.esp
+*ScopedBows.esp
+*ScopedBows_ArrowTweaks.esp
+*ScopedBows_EagleEyeTweak.esp
+*SkyrimReputation_SSE.esp
+*SkyUI_SE.esp
+*SMIM-SE-Merged-All.esp
+*StrangeRunes.esp
+*Summermyst - Enchantments of Skyrim.esp
+*unofficial skyrim special edition patch.esp
+*VisualAnimatedEnchants.esp
+*Wildcat - Combat of Skyrim.esp
+*WondersofWeather.esp
