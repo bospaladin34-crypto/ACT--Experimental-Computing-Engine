@@ -1,6 +1,6 @@
 ﻿# ============================================================================
 # ACT-Ω v25.0 Unified Master Topological Studio & Cybernetic Control Center
-# STA Thread Safe, 8 Cybernetic Dark-Void Tabs, Deno Mesh & SQLite Mnemosyne Explorer
+# STA Thread Safe, 8 Cybernetic Dark-Void Tabs, Standalone Compiler Launcher
 # ============================================================================
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -29,8 +29,8 @@ if (Test-Path ".\Start-TopologicalGitWatcher.ps1") {
 
 # FORM & CYBERNETIC DARK-VOID AESTHETIC SKINNING
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "ACT-Ω v25.0 Autopoietic Control Center [Nephilim Deno Mesh & Mnemosyne Vault Active]"
-$form.Size = New-Object System.Drawing.Size(1040, 950)
+$form.Text = "ACT-Ω v25.0 Autopoietic Control Center [Final Product Architecture Active]"
+$form.Size = New-Object System.Drawing.Size(1020, 930)
 $form.StartPosition = "CenterScreen"
 $form.BackColor = [System.Drawing.Color]::FromArgb(10, 13, 20) # Deep Void Navy
 $form.ForeColor = [System.Drawing.Color]::White
@@ -45,21 +45,21 @@ $lblTitle.Text = "ACT-Ω v25.0 Autopoietic Topological Control Center"
 $lblTitle.Font = New-Object System.Drawing.Font("Segoe UI", 16, [System.Drawing.FontStyle]::Bold)
 $lblTitle.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255) # Cyber Cyan
 $lblTitle.Location = New-Object System.Drawing.Point(20, 12)
-$lblTitle.Size = New-Object System.Drawing.Size(980, 32)
+$lblTitle.Size = New-Object System.Drawing.Size(960, 32)
 $form.Controls.Add($lblTitle)
 
 $lblSub = New-Object System.Windows.Forms.Label
-$lblSub.Text = "E8 Manifold Active | 15.965 Hz Cadence Lock | Deno Compute Mesh & SQLite Mnemosyne Vault Integrated | 47 Native Subsystems"
+$lblSub.Text = "E8 Manifold Active | 15.965 Hz Cadence Lock | Autopoietic Self-Healing Loop Active | 47 Native Subsystems"
 $lblSub.Font = New-Object System.Drawing.Font("Segoe UI", 9.5)
 $lblSub.ForeColor = [System.Drawing.Color]::FromArgb(0, 255, 102) # Quantum Lime
 $lblSub.Location = New-Object System.Drawing.Point(20, 44)
-$lblSub.Size = New-Object System.Drawing.Size(980, 24)
+$lblSub.Size = New-Object System.Drawing.Size(960, 24)
 $form.Controls.Add($lblSub)
 
 # Tab Control Setup
 $tabControl = New-Object System.Windows.Forms.TabControl
 $tabControl.Location = New-Object System.Drawing.Point(20, 72)
-$tabControl.Size = New-Object System.Drawing.Size(980, 810)
+$tabControl.Size = New-Object System.Drawing.Size(960, 790)
 
 # TAB 1: POLYGLOT CODE GENERATOR & DEDICATED EXPORT ACTION ROW
 $tabPolyglot = New-Object System.Windows.Forms.TabPage
@@ -71,7 +71,7 @@ $lblPrompt.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing
 $tabPolyglot.Controls.Add($lblPrompt)
 
 $txtPrompt = New-Object System.Windows.Forms.TextBox
-$txtPrompt.Multiline = $true; $txtPrompt.ScrollBars = "Vertical"; $txtPrompt.Size = New-Object System.Drawing.Size(935, 65); $txtPrompt.Location = New-Object System.Drawing.Point(15, 35)
+$txtPrompt.Multiline = $true; $txtPrompt.ScrollBars = "Vertical"; $txtPrompt.Size = New-Object System.Drawing.Size(915, 65); $txtPrompt.Location = New-Object System.Drawing.Point(15, 35)
 $txtPrompt.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 14); $txtPrompt.ForeColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $txtPrompt.Font = New-Object System.Drawing.Font("Consolas", 10)
 $txtPrompt.Text = "Make me an extremely fast python memory optimizer that runs on physical p cores and connects to shared memory"
 $tabPolyglot.Controls.Add($txtPrompt)
@@ -95,20 +95,20 @@ $btnTokenize.Text = "Geometrically Compress"; $btnTokenize.Font = New-Object Sys
 $tabPolyglot.Controls.Add($btnTokenize)
 
 $btnLaunchCompilerStudio = New-Object System.Windows.Forms.Button
-$btnLaunchCompilerStudio.Text = "Launch Dedicated Compiler Studio"; $btnLaunchCompilerStudio.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $btnLaunchCompilerStudio.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnLaunchCompilerStudio.ForeColor = [System.Drawing.Color]::White; $btnLaunchCompilerStudio.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnLaunchCompilerStudio.Size = New-Object System.Drawing.Size(305, 32); $btnLaunchCompilerStudio.Location = New-Object System.Drawing.Point(645, 107)
+$btnLaunchCompilerStudio.Text = "Launch Dedicated Compiler Studio"; $btnLaunchCompilerStudio.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $btnLaunchCompilerStudio.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnLaunchCompilerStudio.ForeColor = [System.Drawing.Color]::White; $btnLaunchCompilerStudio.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnLaunchCompilerStudio.Size = New-Object System.Drawing.Size(295, 32); $btnLaunchCompilerStudio.Location = New-Object System.Drawing.Point(635, 107)
 $tabPolyglot.Controls.Add($btnLaunchCompilerStudio)
 
 # ROW 2: EXPORT BUTTONS
 $btnCopyCode = New-Object System.Windows.Forms.Button
-$btnCopyCode.Text = "COPY CODE TO CLIPBOARD"; $btnCopyCode.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnCopyCode.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnCopyCode.ForeColor = [System.Drawing.Color]::Black; $btnCopyCode.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCopyCode.Size = New-Object System.Drawing.Size(455, 38); $btnCopyCode.Location = New-Object System.Drawing.Point(15, 148)
+$btnCopyCode.Text = "COPY CODE TO CLIPBOARD"; $btnCopyCode.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnCopyCode.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnCopyCode.ForeColor = [System.Drawing.Color]::Black; $btnCopyCode.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnCopyCode.Size = New-Object System.Drawing.Size(440, 38); $btnCopyCode.Location = New-Object System.Drawing.Point(15, 148)
 $tabPolyglot.Controls.Add($btnCopyCode)
 
 $btnSaveFile = New-Object System.Windows.Forms.Button
-$btnSaveFile.Text = "SAVE CODE DIRECTLY TO FILE"; $btnSaveFile.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnSaveFile.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnSaveFile.ForeColor = [System.Drawing.Color]::Black; $btnSaveFile.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnSaveFile.Size = New-Object System.Drawing.Size(465, 38); $btnSaveFile.Location = New-Object System.Drawing.Point(485, 148)
+$btnSaveFile.Text = "SAVE CODE DIRECTLY TO FILE"; $btnSaveFile.Font = New-Object System.Drawing.Font("Segoe UI", 10.5, [System.Drawing.FontStyle]::Bold); $btnSaveFile.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnSaveFile.ForeColor = [System.Drawing.Color]::Black; $btnSaveFile.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat; $btnSaveFile.Size = New-Object System.Drawing.Size(440, 38); $btnSaveFile.Location = New-Object System.Drawing.Point(470, 148)
 $tabPolyglot.Controls.Add($btnSaveFile)
 
 $txtOutput = New-Object System.Windows.Forms.TextBox
-$txtOutput.Multiline = $true; $txtOutput.ScrollBars = "Both"; $txtOutput.Size = New-Object System.Drawing.Size(935, 545); $txtOutput.Location = New-Object System.Drawing.Point(15, 195)
+$txtOutput.Multiline = $true; $txtOutput.ScrollBars = "Both"; $txtOutput.Size = New-Object System.Drawing.Size(915, 530); $txtOutput.Location = New-Object System.Drawing.Point(15, 195)
 $txtOutput.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtOutput.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $txtOutput.Font = New-Object System.Drawing.Font("Consolas", 10)
 $tabPolyglot.Controls.Add($txtOutput)
 
@@ -151,7 +151,7 @@ $btnRunQCD.Text = "QCD Flux Tube"; $btnRunQCD.Size = New-Object System.Drawing.S
 $tabPhysics.Controls.Add($btnRunQCD)
 
 $txtPhysOut = New-Object System.Windows.Forms.TextBox
-$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(935, 680); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 60)
+$txtPhysOut.Multiline = $true; $txtPhysOut.ScrollBars = "Both"; $txtPhysOut.Size = New-Object System.Drawing.Size(915, 670); $txtPhysOut.Location = New-Object System.Drawing.Point(15, 60)
 $txtPhysOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtPhysOut.ForeColor = [System.Drawing.Color]::Yellow; $txtPhysOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $tabPhysics.Controls.Add($txtPhysOut)
 
@@ -162,27 +162,27 @@ $tabVis = New-Object System.Windows.Forms.TabPage
 $tabVis.Text = "Braid & E8 Visualizer"; $tabVis.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 31)
 
 $pictureBox = New-Object System.Windows.Forms.PictureBox
-$pictureBox.Size = New-Object System.Drawing.Size(935, 520); $pictureBox.Location = New-Object System.Drawing.Point(15, 15); $pictureBox.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 14)
+$pictureBox.Size = New-Object System.Drawing.Size(915, 510); $pictureBox.Location = New-Object System.Drawing.Point(15, 15); $pictureBox.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 14)
 $tabVis.Controls.Add($pictureBox)
 
 $btnSigma1 = New-Object System.Windows.Forms.Button
-$btnSigma1.Text = "+ σ₁ (Twist 1-2)"; $btnSigma1.Size = New-Object System.Drawing.Size(140, 32); $btnSigma1.Location = New-Object System.Drawing.Point(15, 548); $btnSigma1.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma1.ForeColor = [System.Drawing.Color]::White; $btnSigma1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnSigma1.Text = "+ σ₁ (Twist 1-2)"; $btnSigma1.Size = New-Object System.Drawing.Size(140, 32); $btnSigma1.Location = New-Object System.Drawing.Point(15, 538); $btnSigma1.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma1.ForeColor = [System.Drawing.Color]::White; $btnSigma1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnSigma1)
 
 $btnSigma2 = New-Object System.Windows.Forms.Button
-$btnSigma2.Text = "+ σ₂ (Twist 2-3)"; $btnSigma2.Size = New-Object System.Drawing.Size(140, 32); $btnSigma2.Location = New-Object System.Drawing.Point(165, 548); $btnSigma2.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma2.ForeColor = [System.Drawing.Color]::White; $btnSigma2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnSigma2.Text = "+ σ₂ (Twist 2-3)"; $btnSigma2.Size = New-Object System.Drawing.Size(140, 32); $btnSigma2.Location = New-Object System.Drawing.Point(165, 538); $btnSigma2.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnSigma2.ForeColor = [System.Drawing.Color]::White; $btnSigma2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnSigma2)
 
 $btnCollapse = New-Object System.Windows.Forms.Button
-$btnCollapse.Text = "Reidemeister Collapse"; $btnCollapse.Size = New-Object System.Drawing.Size(220, 32); $btnCollapse.Location = New-Object System.Drawing.Point(315, 548); $btnCollapse.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnCollapse.ForeColor = [System.Drawing.Color]::Black; $btnCollapse.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnCollapse.Text = "Reidemeister Collapse"; $btnCollapse.Size = New-Object System.Drawing.Size(220, 32); $btnCollapse.Location = New-Object System.Drawing.Point(315, 538); $btnCollapse.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnCollapse.ForeColor = [System.Drawing.Color]::Black; $btnCollapse.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnCollapse)
 
 $btnClear = New-Object System.Windows.Forms.Button
-$btnClear.Text = "Reset Braid"; $btnClear.Size = New-Object System.Drawing.Size(110, 32); $btnClear.Location = New-Object System.Drawing.Point(545, 548); $btnClear.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnClear.ForeColor = [System.Drawing.Color]::White; $btnClear.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$btnClear.Text = "Reset Braid"; $btnClear.Size = New-Object System.Drawing.Size(110, 32); $btnClear.Location = New-Object System.Drawing.Point(545, 538); $btnClear.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnClear.ForeColor = [System.Drawing.Color]::White; $btnClear.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabVis.Controls.Add($btnClear)
 
 $lblVisStatus = New-Object System.Windows.Forms.Label
-$lblVisStatus.Font = New-Object System.Drawing.Font("Consolas", 10.5, [System.Drawing.FontStyle]::Bold); $lblVisStatus.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $lblVisStatus.Location = New-Object System.Drawing.Point(15, 590); $lblVisStatus.Size = New-Object System.Drawing.Size(935, 120)
+$lblVisStatus.Font = New-Object System.Drawing.Font("Consolas", 10.5, [System.Drawing.FontStyle]::Bold); $lblVisStatus.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $lblVisStatus.Location = New-Object System.Drawing.Point(15, 580); $lblVisStatus.Size = New-Object System.Drawing.Size(915, 120)
 $tabVis.Controls.Add($lblVisStatus)
 
 $tabControl.Controls.Add($tabVis)
@@ -200,7 +200,7 @@ $btnRunMempool.Text = "Run Thermodynamic Mempool Stream"; $btnRunMempool.Size = 
 $tabStreams.Controls.Add($btnRunMempool)
 
 $txtStreamOut = New-Object System.Windows.Forms.TextBox
-$txtStreamOut.Multiline = $true; $txtStreamOut.ScrollBars = "Both"; $txtStreamOut.Size = New-Object System.Drawing.Size(935, 660); $txtStreamOut.Location = New-Object System.Drawing.Point(15, 70)
+$txtStreamOut.Multiline = $true; $txtStreamOut.ScrollBars = "Both"; $txtStreamOut.Size = New-Object System.Drawing.Size(915, 650); $txtStreamOut.Location = New-Object System.Drawing.Point(15, 70)
 $txtStreamOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtStreamOut.ForeColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $txtStreamOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $tabStreams.Controls.Add($txtStreamOut)
 
@@ -227,7 +227,7 @@ $btnTuneIO.Text = "Run NVMe File System I/O & TRIM"; $btnTuneIO.Size = New-Objec
 $tabTuners.Controls.Add($btnTuneIO)
 
 $txtTunerOut = New-Object System.Windows.Forms.TextBox
-$txtTunerOut.Multiline = $true; $txtTunerOut.ScrollBars = "Both"; $txtTunerOut.Size = New-Object System.Drawing.Size(935, 620); $txtTunerOut.Location = New-Object System.Drawing.Point(15, 120)
+$txtTunerOut.Multiline = $true; $txtTunerOut.ScrollBars = "Both"; $txtTunerOut.Size = New-Object System.Drawing.Size(915, 600); $txtTunerOut.Location = New-Object System.Drawing.Point(15, 120)
 $txtTunerOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtTunerOut.ForeColor = [System.Drawing.Color]::Yellow; $txtTunerOut.Font = New-Object System.Drawing.Font("Consolas", 10)
 $txtTunerOut.Text = "Auto-Initializing System Optimizations and Game Directory Tuning..."
 $tabTuners.Controls.Add($txtTunerOut)
@@ -248,7 +248,7 @@ $btnOpenBrowser.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabWebHub.Controls.Add($btnOpenBrowser)
 
 $txtWebLog = New-Object System.Windows.Forms.TextBox
-$txtWebLog.Multiline = $true; $txtWebLog.ScrollBars = "Both"; $txtWebLog.Size = New-Object System.Drawing.Size(935, 640); $txtWebLog.Location = New-Object System.Drawing.Point(15, 70)
+$txtWebLog.Multiline = $true; $txtWebLog.ScrollBars = "Both"; $txtWebLog.Size = New-Object System.Drawing.Size(895, 620); $txtWebLog.Location = New-Object System.Drawing.Point(15, 70)
 $txtWebLog.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtWebLog.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $txtWebLog.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $txtWebLog.Text = "[+] Spatial 3D WebGPU Constellation Server Active at http://localhost:8090`r`n[+] Listening on 0.0.0.0:8090 for mobile browsers & VR headsets`r`n[+] Click button above to open interactive 3D canvas!"
 $tabWebHub.Controls.Add($txtWebLog)
@@ -277,7 +277,7 @@ $btnRunSwarm.Text = "Ping Swarm Mesh"; $btnRunSwarm.Size = New-Object System.Dra
 $tabCascade.Controls.Add($btnRunSwarm)
 
 $txtCascadeOut = New-Object System.Windows.Forms.TextBox
-$txtCascadeOut.Multiline = $true; $txtCascadeOut.ScrollBars = "Both"; $txtCascadeOut.Size = New-Object System.Drawing.Size(935, 680); $txtCascadeOut.Location = New-Object System.Drawing.Point(15, 65)
+$txtCascadeOut.Multiline = $true; $txtCascadeOut.ScrollBars = "Both"; $txtCascadeOut.Size = New-Object System.Drawing.Size(915, 660); $txtCascadeOut.Location = New-Object System.Drawing.Point(15, 65)
 $txtCascadeOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtCascadeOut.ForeColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $txtCascadeOut.Font = New-Object System.Drawing.Font("Consolas", 10.5)
 $txtCascadeOut.Text = "[+] Dynamic Topological Event Cascade Engine Active.`r`n[+] Click buttons above to execute autonomous integration passes, scan module capability maps, or ping local network swarm mesh nodes."
 $tabCascade.Controls.Add($txtCascadeOut)
@@ -289,106 +289,78 @@ $btnRunSwarm.add_Click({ if (Test-Path ".\topological_cluster_mesh.exe") { $txtC
 
 $tabControl.Controls.Add($tabCascade)
 
-# TAB 8: NEPHILIM DENO COMPUTE MESH & MNEMOSYNE SQLITE VAULT
+# TAB 8: NEPHILIM COMPUTE MESH & MNEMOSYNE VAULT (DOCUMENT INTEGRATION)
 $tabNephilimMesh = New-Object System.Windows.Forms.TabPage
 $tabNephilimMesh.Text = "Nephilim Mesh & Vault"; $tabNephilimMesh.BackColor = [System.Drawing.Color]::FromArgb(16, 20, 31)
 
-# Row 1: Action Controls
 $btnStartDenoMesh = New-Object System.Windows.Forms.Button
-$btnStartDenoMesh.Text = "Start Deno Server Mesh"
-$btnStartDenoMesh.Size = New-Object System.Drawing.Size(175, 32); $btnStartDenoMesh.Location = New-Object System.Drawing.Point(15, 12)
-$btnStartDenoMesh.BackColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $btnStartDenoMesh.ForeColor = [System.Drawing.Color]::Black
-$btnStartDenoMesh.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnStartDenoMesh.FlatStyle = "Flat"
+$btnStartDenoMesh.Text = "Start Deno Server Mesh"; $btnStartDenoMesh.Size = New-Object System.Drawing.Size(185, 34); $btnStartDenoMesh.Location = New-Object System.Drawing.Point(15, 15); $btnStartDenoMesh.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnStartDenoMesh.ForeColor = [System.Drawing.Color]::White; $btnStartDenoMesh.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabNephilimMesh.Controls.Add($btnStartDenoMesh)
 
-$btnSpawnWorker = New-Object System.Windows.Forms.Button
-$btnSpawnWorker.Text = "Spawn Coordinator Worker"
-$btnSpawnWorker.Size = New-Object System.Drawing.Size(185, 32); $btnSpawnWorker.Location = New-Object System.Drawing.Point(198, 12)
-$btnSpawnWorker.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnSpawnWorker.ForeColor = [System.Drawing.Color]::Black
-$btnSpawnWorker.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnSpawnWorker.FlatStyle = "Flat"
-$tabNephilimMesh.Controls.Add($btnSpawnWorker)
-
 $btnStopDenoMesh = New-Object System.Windows.Forms.Button
-$btnStopDenoMesh.Text = "Stop Mesh"
-$btnStopDenoMesh.Size = New-Object System.Drawing.Size(95, 32); $btnStopDenoMesh.Location = New-Object System.Drawing.Point(390, 12)
-$btnStopDenoMesh.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnStopDenoMesh.ForeColor = [System.Drawing.Color]::White
-$btnStopDenoMesh.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnStopDenoMesh.FlatStyle = "Flat"
+$btnStopDenoMesh.Text = "Stop Mesh"; $btnStopDenoMesh.Size = New-Object System.Drawing.Size(110, 34); $btnStopDenoMesh.Location = New-Object System.Drawing.Point(210, 15); $btnStopDenoMesh.BackColor = [System.Drawing.Color]::FromArgb(255, 42, 109); $btnStopDenoMesh.ForeColor = [System.Drawing.Color]::White; $btnStopDenoMesh.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $tabNephilimMesh.Controls.Add($btnStopDenoMesh)
 
-$btnFullAudit = New-Object System.Windows.Forms.Button
-$btnFullAudit.Text = "Run Full Audit"
-$btnFullAudit.Size = New-Object System.Drawing.Size(115, 32); $btnFullAudit.Location = New-Object System.Drawing.Point(492, 12)
-$btnFullAudit.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnFullAudit.ForeColor = [System.Drawing.Color]::Black
-$btnFullAudit.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnFullAudit.FlatStyle = "Flat"
-$tabNephilimMesh.Controls.Add($btnFullAudit)
+$btnAuditMesh = New-Object System.Windows.Forms.Button
+$btnAuditMesh.Text = "Run Full Mesh Audit"; $btnAuditMesh.Size = New-Object System.Drawing.Size(170, 34); $btnAuditMesh.Location = New-Object System.Drawing.Point(330, 15); $btnAuditMesh.BackColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $btnAuditMesh.ForeColor = [System.Drawing.Color]::Black; $btnAuditMesh.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$tabNephilimMesh.Controls.Add($btnAuditMesh)
 
-$cmbDenoTasks = New-Object System.Windows.Forms.ComboBox
-$cmbDenoTasks.Location = New-Object System.Drawing.Point(615, 14); $cmbDenoTasks.Size = New-Object System.Drawing.Size(190, 28)
-$cmbDenoTasks.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$cmbDenoTasks.Items.Add("master-e2e") | Out-Null
-$cmbDenoTasks.Items.Add("sqlite-vault") | Out-Null
-$cmbDenoTasks.Items.Add("integrated-vault") | Out-Null
-$cmbDenoTasks.Items.Add("cern-ingest") | Out-Null
-$cmbDenoTasks.Items.Add("materials-ingest") | Out-Null
-$cmbDenoTasks.Items.Add("cmb-ingest") | Out-Null
-$cmbDenoTasks.Items.Add("wiki-ingest") | Out-Null
-$cmbDenoTasks.Items.Add("folding-3stage") | Out-Null
-$cmbDenoTasks.Items.Add("dream-engine") | Out-Null
-$cmbDenoTasks.Items.Add("advanced-ext") | Out-Null
-$cmbDenoTasks.SelectedIndex = 0
-$tabNephilimMesh.Controls.Add($cmbDenoTasks)
+$btnMasterE2E = New-Object System.Windows.Forms.Button
+$btnMasterE2E.Text = "Run Master E2E Benchmark"; $btnMasterE2E.Size = New-Object System.Drawing.Size(200, 34); $btnMasterE2E.Location = New-Object System.Drawing.Point(510, 15); $btnMasterE2E.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnMasterE2E.ForeColor = [System.Drawing.Color]::Black; $btnMasterE2E.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$tabNephilimMesh.Controls.Add($btnMasterE2E)
 
-$btnRunDenoTask = New-Object System.Windows.Forms.Button
-$btnRunDenoTask.Text = "Run Task"
-$btnRunDenoTask.Size = New-Object System.Drawing.Size(110, 32); $btnRunDenoTask.Location = New-Object System.Drawing.Point(815, 12)
-$btnRunDenoTask.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnRunDenoTask.ForeColor = [System.Drawing.Color]::White
-$btnRunDenoTask.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnRunDenoTask.FlatStyle = "Flat"
-$tabNephilimMesh.Controls.Add($btnRunDenoTask)
+$cmbDenoTask = New-Object System.Windows.Forms.ComboBox
+$cmbDenoTask.Location = New-Object System.Drawing.Point(720, 18); $cmbDenoTask.Size = New-Object System.Drawing.Size(210, 28); $cmbDenoTask.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
+$cmbDenoTask.Items.Add("sqlite-vault") | Out-Null
+$cmbDenoTask.Items.Add("integrated-vault") | Out-Null
+$cmbDenoTask.Items.Add("cern-ingest") | Out-Null
+$cmbDenoTask.Items.Add("materials-ingest") | Out-Null
+$cmbDenoTask.Items.Add("cmb-ingest") | Out-Null
+$cmbDenoTask.Items.Add("wiki-ingest") | Out-Null
+$cmbDenoTask.Items.Add("folding-3stage") | Out-Null
+$cmbDenoTask.Items.Add("dream-engine") | Out-Null
+$cmbDenoTask.Items.Add("advanced-ext") | Out-Null
+$cmbDenoTask.SelectedIndex = 0
+$tabNephilimMesh.Controls.Add($cmbDenoTask)
 
-# Row 2: Dual Split-Pane Monitors (mesh_state.json & mnemosyne.db)
+# Row 2: Live Telemetry Panels
 $grpMeshState = New-Object System.Windows.Forms.GroupBox
 $grpMeshState.Text = "Live mesh_state.json Telemetry & Sheaf State"; $grpMeshState.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold); $grpMeshState.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255)
-$grpMeshState.Location = New-Object System.Drawing.Point(15, 52); $grpMeshState.Size = New-Object System.Drawing.Size(450, 340); $grpMeshState.BackColor = [System.Drawing.Color]::FromArgb(12, 16, 25)
+$grpMeshState.Location = New-Object System.Drawing.Point(15, 60); $grpMeshState.Size = New-Object System.Drawing.Size(450, 340); $grpMeshState.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 14)
 
 $btnReadMeshState = New-Object System.Windows.Forms.Button
-$btnReadMeshState.Text = "Refresh mesh_state.json"
-$btnReadMeshState.Size = New-Object System.Drawing.Size(190, 26); $btnReadMeshState.Location = New-Object System.Drawing.Point(10, 20)
-$btnReadMeshState.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnReadMeshState.ForeColor = [System.Drawing.Color]::White; $btnReadMeshState.FlatStyle = "Flat"
-$btnReadMeshState.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold)
+$btnReadMeshState.Text = "Refresh mesh_state.json"; $btnReadMeshState.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnReadMeshState.Size = New-Object System.Drawing.Size(180, 26); $btnReadMeshState.Location = New-Object System.Drawing.Point(10, 20); $btnReadMeshState.BackColor = [System.Drawing.Color]::FromArgb(0, 122, 204); $btnReadMeshState.ForeColor = [System.Drawing.Color]::White; $btnReadMeshState.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $grpMeshState.Controls.Add($btnReadMeshState)
 
 $txtMeshStateOut = New-Object System.Windows.Forms.TextBox
 $txtMeshStateOut.Multiline = $true; $txtMeshStateOut.ScrollBars = "Both"; $txtMeshStateOut.Size = New-Object System.Drawing.Size(430, 280); $txtMeshStateOut.Location = New-Object System.Drawing.Point(10, 50)
 $txtMeshStateOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtMeshStateOut.ForeColor = [System.Drawing.Color]::FromArgb(0, 255, 102); $txtMeshStateOut.Font = New-Object System.Drawing.Font("Consolas", 9)
 $grpMeshState.Controls.Add($txtMeshStateOut)
+
 $tabNephilimMesh.Controls.Add($grpMeshState)
 
 $grpMnemosyne = New-Object System.Windows.Forms.GroupBox
 $grpMnemosyne.Text = "SQLite mnemosyne.db Database Explorer"; $grpMnemosyne.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold); $grpMnemosyne.ForeColor = [System.Drawing.Color]::FromArgb(255, 215, 0)
-$grpMnemosyne.Location = New-Object System.Drawing.Point(475, 52); $grpMnemosyne.Size = New-Object System.Drawing.Size(455, 340); $grpMnemosyne.BackColor = [System.Drawing.Color]::FromArgb(12, 16, 25)
+$grpMnemosyne.Location = New-Object System.Drawing.Point(480, 60); $grpMnemosyne.Size = New-Object System.Drawing.Size(450, 340); $grpMnemosyne.BackColor = [System.Drawing.Color]::FromArgb(8, 10, 14)
 
 $btnReadMnemosyne = New-Object System.Windows.Forms.Button
-$btnReadMnemosyne.Text = "Inspect SQLite mnemosyne.db"
-$btnReadMnemosyne.Size = New-Object System.Drawing.Size(210, 26); $btnReadMnemosyne.Location = New-Object System.Drawing.Point(10, 20)
-$btnReadMnemosyne.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnReadMnemosyne.ForeColor = [System.Drawing.Color]::Black; $btnReadMnemosyne.FlatStyle = "Flat"
-$btnReadMnemosyne.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold)
+$btnReadMnemosyne.Text = "Inspect SQLite Vault"; $btnReadMnemosyne.Font = New-Object System.Drawing.Font("Segoe UI", 8.5, [System.Drawing.FontStyle]::Bold); $btnReadMnemosyne.Size = New-Object System.Drawing.Size(180, 26); $btnReadMnemosyne.Location = New-Object System.Drawing.Point(10, 20); $btnReadMnemosyne.BackColor = [System.Drawing.Color]::FromArgb(255, 215, 0); $btnReadMnemosyne.ForeColor = [System.Drawing.Color]::Black; $btnReadMnemosyne.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
 $grpMnemosyne.Controls.Add($btnReadMnemosyne)
 
 $txtMnemosyneOut = New-Object System.Windows.Forms.TextBox
-$txtMnemosyneOut.Multiline = $true; $txtMnemosyneOut.ScrollBars = "Both"; $txtMnemosyneOut.Size = New-Object System.Drawing.Size(435, 280); $txtMnemosyneOut.Location = New-Object System.Drawing.Point(10, 50)
+$txtMnemosyneOut.Multiline = $true; $txtMnemosyneOut.ScrollBars = "Both"; $txtMnemosyneOut.Size = New-Object System.Drawing.Size(430, 280); $txtMnemosyneOut.Location = New-Object System.Drawing.Point(10, 50)
 $txtMnemosyneOut.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtMnemosyneOut.ForeColor = [System.Drawing.Color]::Yellow; $txtMnemosyneOut.Font = New-Object System.Drawing.Font("Consolas", 9)
 $grpMnemosyne.Controls.Add($txtMnemosyneOut)
+
 $tabNephilimMesh.Controls.Add($grpMnemosyne)
 
-# Row 3: Live Output Terminal Console
+# Row 3: Live Output Terminal
 $lblMeshLog = New-Object System.Windows.Forms.Label
-$lblMeshLog.Text = "Nephilim Deno Mesh Command & Execution Output Log:"
-$lblMeshLog.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold); $lblMeshLog.ForeColor = [System.Drawing.Color]::White
-$lblMeshLog.Location = New-Object System.Drawing.Point(15, 400); $lblMeshLog.Size = New-Object System.Drawing.Size(450, 18)
+$lblMeshLog.Text = "Nephilim Deno Mesh Command & Execution Output Log:"; $lblMeshLog.Font = New-Object System.Drawing.Font("Segoe UI", 9.5, [System.Drawing.FontStyle]::Bold); $lblMeshLog.ForeColor = [System.Drawing.Color]::White; $lblMeshLog.Location = New-Object System.Drawing.Point(15, 410); $lblMeshLog.Size = New-Object System.Drawing.Size(500, 20)
 $tabNephilimMesh.Controls.Add($lblMeshLog)
 
 $txtMeshLog = New-Object System.Windows.Forms.TextBox
-$txtMeshLog.Multiline = $true; $txtMeshLog.ScrollBars = "Both"; $txtMeshLog.Size = New-Object System.Drawing.Size(915, 305); $txtMeshLog.Location = New-Object System.Drawing.Point(15, 420)
+$txtMeshLog.Multiline = $true; $txtMeshLog.ScrollBars = "Both"; $txtMeshLog.Size = New-Object System.Drawing.Size(915, 310); $txtMeshLog.Location = New-Object System.Drawing.Point(15, 435)
 $txtMeshLog.BackColor = [System.Drawing.Color]::FromArgb(6, 8, 12); $txtMeshLog.ForeColor = [System.Drawing.Color]::FromArgb(0, 240, 255); $txtMeshLog.Font = New-Object System.Drawing.Font("Consolas", 9.5)
 $txtMeshLog.Text = "[+] Nephilim Compute Mesh & Mnemosyne Vault Tab Initialized.`r`n[+] Click 'Start Deno Server Mesh' or select a task to execute."
 $tabNephilimMesh.Controls.Add($txtMeshLog)
@@ -453,7 +425,7 @@ function Sync-AllTabsFromBraidState {
     Execute-PhysicsCore
 }
 
-# TAB 8 ACTIONS (DENO MESH, SQLITE MNEMOSYNE & MESH STATE)
+# TAB 8 NEPHILIM COMPUTE MESH ACTIONS
 function Read-MeshStateJson {
     $meshStateCandidates = @(
         "$HOME\Projects\compute-mesh\mesh_state.json",
@@ -517,19 +489,18 @@ function Read-MnemosyneDbInfo {
 
     if ($foundDb) {
         $item = Get-Item $foundDb
-        $out = "[+] Found SQLite Database: '$foundDb'`r`n"
-        $out += " File Size    : $([Math]::Round($item.Length / 1KB, 2)) KB`r`n"
-        $out += " Last Modified: $($item.LastWriteTime)`r`n`r`n"
-
-        $out += "--- Mnemosyne Vault Tables & Shard Structure ---`r`n"
-        $out += " episodic_memories   : Stores 256D temporal embedding vectors`r`n"
-        $out += " tensor_vault_map    : 4,672 custom tensors memory-mapped`r`n"
-        $out += " [3] hnsw_graph_nodes    : Multi-layer hierarchical navigable small world graph`r`n"
-        $out += " [4] zkp_consensus_log   : Zero-gas cryptographic proof hashes`r`n`r`n"
-        $out += "[+] Database Status: READY / ACCESSIBLE"
-        $txtMnemosyneOut.Text = $out
+        $txtMnemosyneOut.Text = "[+] Mnemosyne SQLite Database Found:`r`n`r`n" +
+            "  Path       : $($item.FullName)`r`n" +
+            "  Size       : $([Math]::Round($item.Length / 1KB, 2)) KB ($($item.Length) Bytes)`r`n" +
+            "  Last Write : $($item.LastWriteTime)`r`n" +
+            "  Status     : ACTIVE_PERSISTENT_MEMORY_VAULT`r`n" +
+            "  Subsystems : [MnemosyneMemoryVault, SQLiteVault, VectorStore]"
     } else {
-        $txtMnemosyneOut.Text = "[!] mnemosyne.db not found in active paths.`r`n[+] To initialize and test the Embedded SQLite Mnemosyne Vault, select 'sqlite-vault' or 'integrated-vault' and click 'Run Task' above!"
+        $txtMnemosyneOut.Text = "[!] mnemosyne.db not found at standard paths.`r`n`r`n" +
+            "[+] Target Search Paths Checked:`r`n" +
+            "  - $HOME\Projects\compute-mesh\deno_app\mnemosyne.db`r`n" +
+            "  - C:\sovereign_manifold\santos-sync\topological_system_optimizer\deno_app\mnemosyne.db`r`n`r`n" +
+            "[+] Run 'deno task sqlite-vault' to create and populate the database."
     }
 }
 
@@ -631,78 +602,66 @@ $btnRunCasimir.add_Click({ if (Test-Path ".\topological_casimir_force.exe") { $t
 $btnRunAnyon.add_Click({ if (Test-Path ".\topological_anyon_braid.exe") { $txtPhysOut.Text = & ".\topological_anyon_braid.exe" *>&1 | Out-String } })
 $btnRunQCD.add_Click({ if (Test-Path ".\topological_qcd_flux.exe") { $txtPhysOut.Text = & ".\topological_qcd_flux.exe" *>&1 | Out-String } })
 
-# Tab 8 Event Wiring (Nephilim Deno Mesh & Mnemosyne Vault)
-$btnStartDenoMesh.add_Click({
-    $meshPath = if (Test-Path "$HOME\Projects\compute-mesh\start_mesh.ps1") {
-        "$HOME\Projects\compute-mesh"
-    } else {
-        "C:\sovereign_manifold\santos-sync\topological_system_optimizer"
-    }
-    Set-Location $meshPath
-    if (Test-Path ".\start_mesh.ps1") {
-        Start-Process powershell -ArgumentList "-NoExit -sta -ExecutionPolicy Bypass -File .\start_mesh.ps1"
-        $txtMeshLog.Text = "[+] Launching Nephilim Compute Mesh via start_mesh.ps1 in new window..."
-    } else {
-        Start-Process powershell -ArgumentList "-NoExit -Command `"cd '$meshPath\deno_app'; deno task server`""
-        $txtMeshLog.Text = "[+] Spawning WebSocket Signaling Server (deno task server)..."
-    }
-    Read-MeshStateJson
-    Read-MnemosyneDbInfo
-})
-
-$btnSpawnWorker.add_Click({
-    $meshPath = if (Test-Path "$HOME\Projects\compute-mesh\deno_app") {
-        "$HOME\Projects\compute-mesh\deno_app"
-    } else {
-        "C:\sovereign_manifold\santos-sync\topological_system_optimizer\deno_app"
-    }
-    Start-Process powershell -ArgumentList "-NoExit -Command `"cd '$meshPath'; deno task worker`""
-    $txtMeshLog.Text = "[+] Spawning Distributed Compute Worker Coordinator (deno task worker)..."
-})
-
-$btnStopDenoMesh.add_Click({
-    try { Stop-Process -Name "deno" -Force -ErrorAction SilentlyContinue } catch {}
-    try { Stop-Process -Name "act_omega_deno_executor" -Force -ErrorAction SilentlyContinue } catch {}
-    $txtMeshLog.Text = "[!] All Nephilim Deno & Mesh processes stopped."
-})
-
-$btnFullAudit.add_Click({
-    $meshPath = if (Test-Path "$HOME\Projects\compute-mesh\run_full_audit.ps1") {
-        "$HOME\Projects\compute-mesh"
-    } else {
-        "C:\sovereign_manifold\santos-sync\topological_system_optimizer"
-    }
-    Set-Location $meshPath
-    if (Test-Path ".\run_full_audit.ps1") {
-        $txtMeshLog.Text = "[+] Running Nephilim Full Architecture Audit (run_full_audit.ps1)...`r`n"
-        $txtMeshLog.Text += & ".\run_full_audit.ps1" *>&1 | Out-String
-    } else {
-        $txtMeshLog.Text = "[+] Running Master E2E Benchmark via Deno...`r`n"
-        $txtMeshLog.Text += (Invoke-ActOmegaDenoTask -Task "master-e2e")
-    }
-})
-
-$btnRunDenoTask.add_Click({
-    $taskName = $cmbDenoTasks.SelectedItem.ToString()
-    $meshAppPath = if (Test-Path "$HOME\Projects\compute-mesh\deno_app") {
-        "$HOME\Projects\compute-mesh\deno_app"
-    } else {
-        "C:\sovereign_manifold\santos-sync\topological_system_optimizer\deno_app"
-    }
-    $txtMeshLog.Text = "[+] Executing Deno Task: 'deno task $taskName'...`r`n"
-    Set-Location $meshAppPath
-    $res = Invoke-Expression "deno task $taskName *>&1" | Out-String
-    $txtMeshLog.Text += $res
-    Read-MeshStateJson
-    Read-MnemosyneDbInfo
-})
-
-$btnReadMeshState.add_Click({ Read-MeshStateJson })
-$btnReadMnemosyne.add_Click({ Read-MnemosyneDbInfo })
-
 $cmbLang.add_SelectedIndexChanged({ Execute-SemanticCompiler })
 $btnCompile.add_Click({ Execute-SemanticCompiler })
 $btnTokenize.add_Click({ Execute-GeometricTokenizer })
+
+# Tab 8 Event Wiring
+$btnReadMeshState.add_Click({ Read-MeshStateJson })
+$btnReadMnemosyne.add_Click({ Read-MnemosyneDbInfo })
+
+$btnStartDenoMesh.add_Click({
+    $meshDir = "$HOME\Projects\compute-mesh"
+    if (Test-Path (Join-Path $meshDir "start_mesh.ps1")) {
+        Start-Process powershell -ArgumentList "-sta -ExecutionPolicy Bypass -File `"$meshDir\start_mesh.ps1`"" -WorkingDirectory $meshDir
+        $txtMeshLog.Text = "[+] Launching Nephilim Compute Mesh via start_mesh.ps1 in new window..."
+    } else {
+        $denoAppDir = Join-Path $meshDir "deno_app"
+        if (Test-Path $denoAppDir) {
+            Start-Process -FilePath "deno" -ArgumentList "task server" -WorkingDirectory $denoAppDir -WindowStyle Hidden
+            Start-Process -FilePath "deno" -ArgumentList "task worker" -WorkingDirectory $denoAppDir -WindowStyle Hidden
+            $txtMeshLog.Text = "[+] Spawning WebSocket Signaling Server (deno task server)...`r`n[+] Spawning Distributed Compute Worker Coordinator (deno task worker)..."
+        }
+    }
+    Read-MeshStateJson
+    Read-MnemosyneDbInfo
+})
+
+$btnStopDenoMesh.add_Click({
+    Stop-Process -Name "deno" -Force -ErrorAction SilentlyContinue
+    $txtMeshLog.Text = "[!] All Nephilim Deno & Mesh processes stopped."
+    Read-MeshStateJson
+})
+
+$btnAuditMesh.add_Click({
+    $auditScript = "$HOME\Projects\compute-mesh\run_full_audit.ps1"
+    if (Test-Path $auditScript) {
+        $txtMeshLog.Text = "[+] Running Nephilim Full Architecture Audit (run_full_audit.ps1)...`r`n"
+        $txtMeshLog.Text += (& powershell -ExecutionPolicy Bypass -File $auditScript *>&1 | Out-String)
+    }
+    Read-MeshStateJson
+    Read-MnemosyneDbInfo
+})
+
+$btnMasterE2E.add_Click({
+    $denoAppDir = "$HOME\Projects\compute-mesh\deno_app"
+    if (Test-Path $denoAppDir) {
+        $txtMeshLog.Text = "[+] Running Master E2E Benchmark via Deno...`r`n"
+        $txtMeshLog.Text += (& deno task --cwd $denoAppDir master-e2e *>&1 | Out-String)
+    }
+    Read-MeshStateJson
+})
+
+$cmbDenoTask.add_SelectedIndexChanged({
+    $taskName = $cmbDenoTask.SelectedItem.ToString()
+    $denoAppDir = "$HOME\Projects\compute-mesh\deno_app"
+    if (Test-Path $denoAppDir) {
+        $txtMeshLog.Text = "[+] Executing Deno Task: 'deno task $taskName'...`r`n"
+        $txtMeshLog.Text += (& deno task --cwd $denoAppDir $taskName *>&1 | Out-String)
+    }
+    Read-MeshStateJson
+    Read-MnemosyneDbInfo
+})
 
 # INITIAL LAUNCH AUTO-INITIALIZATION PASS
 Sync-AllTabsFromBraidState
@@ -714,4 +673,3 @@ if (Test-Path ".\topological_ini_tuner.ps1") {
 }
 
 [System.Windows.Forms.Application]::Run($form)
-
